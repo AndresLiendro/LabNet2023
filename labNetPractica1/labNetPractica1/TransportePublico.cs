@@ -20,13 +20,7 @@ namespace labNetPractica1
         {
             return pasajeros > 0;
         }
-
-        protected bool PorcentajePasajerosTransporte(int capacidad)
-        {
-            return (float)pasajeros / capacidad > 0.1;
-        }
-
-        protected int ObtenerPasajero()
+        public int ObtenerPasajero()
         {
             return pasajeros;
         }

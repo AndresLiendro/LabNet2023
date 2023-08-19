@@ -9,28 +9,17 @@ namespace labNetPractica1
     public class Taxi : TransportePublico
     {
         public int NumeroTransporte { get; set; }
+
+        private const int CapacidadMaximaTaxi = 4;
         public Taxi(int pasajeros, int numeroTaxi) : base(pasajeros) => NumeroTransporte = numeroTaxi;
         public override void Avanzar()
         {
-            int capacidad = ObtenerCapacidad();
-
-            string tipoTransporte = TipoTransporte();
-
-            if (TienePasajeros())
-            {
-                Console.WriteLine($"{tipoTransporte} N° {NumeroTransporte} con {ObtenerPasajero()} pasajeros comienza el recorrido");
-            }
-            else
-            {
-                Console.WriteLine($"El {tipoTransporte} N° {NumeroTransporte} no puede iniciar su recorrido sin pasajeros");
-            }
+            Console.WriteLine($"{TipoTransporte()} N° {NumeroTransporte} con {ObtenerPasajero()} pasajeros comienza el recorrido");
         }
 
         public override void Detenerse()
         {
-            string tipoTransporte = TipoTransporte();
-
-            Console.WriteLine($"El {tipoTransporte} N° {NumeroTransporte} se detiene");
+            Console.WriteLine($"El {TipoTransporte()} N° {NumeroTransporte} se detiene");
         }
 
         public override int ObtenerNumTransporte()
@@ -40,7 +29,7 @@ namespace labNetPractica1
 
         protected override int ObtenerCapacidad()
         {
-            return 4;
+            return CapacidadMaximaTaxi;
         }
 
         protected override string TipoTransporte()
