@@ -23,7 +23,7 @@ namespace labNetPractica1
                     int NumeroTransporte = random.Next(1, 100);
                     int pasajeros;
 
-                    Console.WriteLine("Ingrese la cantidad de pasajeros para el " + tipoTransporte+ " N°" + NumeroTransporte);
+                    Console.WriteLine("Ingrese la cantidad de pasajeros para el " + tipoTransporte + " N°" + NumeroTransporte);
                     pasajeros = int.Parse(Console.ReadLine());
 
                     if (j == 1)
