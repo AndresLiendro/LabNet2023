@@ -46,5 +46,10 @@ namespace labNetPractica2.Clases.MensajesGenericos
         {
             Console.WriteLine("¿Quiere intentar de nuevo?");
         }
+
+        public static void MensajeDeTipo(Exception ex)
+        {
+            Console.WriteLine($"Tipo de Excepcion: {ex.GetType()}");
+        }
     }
 }

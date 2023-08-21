@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Ejercicio.cs" />
+    <Compile Include="Clases\ExcepcionesPersonalizadas.cs" />
+    <Compile Include="Clases\Logic.cs" />
     <Compile Include="Clases\MensajesGenericos\Mensajes.cs" />
     <Compile Include="Clases\Menu\MenuApp.cs" />
     <Compile Include="Clases\Operaciones.cs" />

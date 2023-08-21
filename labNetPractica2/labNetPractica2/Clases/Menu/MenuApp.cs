@@ -13,11 +13,14 @@ namespace labNetPractica2.Clases.Menu
             switch (opcion)
             {
                 case 1:
+
                     MensajesGenericos.Mensajes.MensajeDividendo();
                     decimal dividendoIngresado = Validaciones.Validaciones.Validacion("Solo se permiten números: ");
                     Ejercicio.PrimerEjercicio(dividendoIngresado);
                     break;
+
                 case 2:
+
                     MensajesGenericos.Mensajes.MensajeDividendo();
                     decimal dividendo = Validaciones.Validaciones.Validacion("Solo se permiten números: ");
 
@@ -25,6 +28,13 @@ namespace labNetPractica2.Clases.Menu
                     decimal divisor = Validaciones.Validaciones.Validacion("Solo se permiten números: ");
                     Ejercicio.SegundoEjercicio(dividendo, divisor);
                     break;
+
+                case 3:
+
+                    Console.WriteLine("Ejercicio N°3: ");
+                    Clases.Logic.Captura();
+                    break;
+
                 default:
                     break;
             }

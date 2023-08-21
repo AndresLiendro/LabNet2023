@@ -10,11 +10,11 @@ namespace labNetPractica2.Clases
     {
         public static void PrimerEjercicio (decimal numero)
         {
-            try 
+            try
             {
 
                 Operaciones.DivisionEj1(numero);
-            } 
+            }
             catch (DivideByZeroException exDiv)
             {
 
@@ -24,6 +24,7 @@ namespace labNetPractica2.Clases
             {
 
                 Console.WriteLine("Termino la operacion.");
+                Validaciones.PruebaIntento.PruebaDeIntento();
             }
         }
 
@@ -43,6 +44,7 @@ namespace labNetPractica2.Clases
             {
 
                 Console.WriteLine("Termino la operacion.");
+                Validaciones.PruebaIntento.PruebaDeIntento();
             }
         }
     }
