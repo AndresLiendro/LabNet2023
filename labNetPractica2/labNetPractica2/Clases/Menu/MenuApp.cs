@@ -14,6 +14,7 @@ namespace labNetPractica2.Clases.Menu
             {
                 case 1:
 
+                    Console.Clear();
                     MensajesGenericos.Mensajes.MensajeDividendo();
                     decimal dividendoIngresado = Validaciones.Validaciones.Validacion("Solo se permiten números: ");
                     Ejercicio.PrimerEjercicio(dividendoIngresado);
@@ -21,6 +22,7 @@ namespace labNetPractica2.Clases.Menu
 
                 case 2:
 
+                    Console.Clear();
                     MensajesGenericos.Mensajes.MensajeDividendo();
                     decimal dividendo = Validaciones.Validaciones.Validacion("Solo se permiten números: ");
 
@@ -31,11 +33,23 @@ namespace labNetPractica2.Clases.Menu
 
                 case 3:
 
-                    Console.WriteLine("Ejercicio N°3: ");
-                    Clases.Logic.Captura();
+                    Console.Clear();
+                    Console.WriteLine("Ejercicio N°3");
+                    Logic.Captura();
+                    break;
+
+                case 4:
+
+                    Console.Clear();
+                    Console.WriteLine("Ejercicio N° 4");
+                    Logic.CapturaExcepcionPersonalizada();
                     break;
 
                 default:
+
+                    Console.WriteLine("Opcion no valida. Ingrese una de las opciones brindadas");
+                    decimal opDefault = Validaciones.Validaciones.Validacion("Solo se permiten números");
+                    Menu(opDefault);
                     break;
             }
         }

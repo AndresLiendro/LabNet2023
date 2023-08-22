@@ -13,6 +13,7 @@ namespace labNetPractica2.Validaciones
             Clases.MensajesGenericos.Mensajes.MensajeNuevoIntento();
             decimal IntentoNuevo = Validaciones.Validacion("Para intentar nuevamente presione 1, para cerrar presione cualquier tecla");
             Intentos.Intento(IntentoNuevo);
+            Console.Clear();
         }
     }
 }
