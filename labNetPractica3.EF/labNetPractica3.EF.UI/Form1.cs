@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace labNetPractica3
+namespace labNetPractica3.EF.UI
 {
     public partial class Form1 : Form
     {

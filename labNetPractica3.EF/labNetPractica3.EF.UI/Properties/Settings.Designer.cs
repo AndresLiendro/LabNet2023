@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace labNetPractica3.Properties
+namespace labNetPractica3.EF.UI.Properties
 {
 
 

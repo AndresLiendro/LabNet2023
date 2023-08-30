@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace labNetPractica3
+namespace labNetPractica3.EF.UI
 {
     internal static class Program
     {

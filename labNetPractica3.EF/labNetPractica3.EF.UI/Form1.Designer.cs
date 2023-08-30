@@ -1,4 +1,4 @@
-﻿namespace labNetPractica3
+﻿namespace labNetPractica3.EF.UI
 {
     partial class Form1
     {
