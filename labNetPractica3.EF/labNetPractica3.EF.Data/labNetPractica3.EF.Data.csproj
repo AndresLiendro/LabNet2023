@@ -57,5 +57,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\labNetPractica3.EF.Entities\labNetPractica3.EF.Entities.csproj">
+      <Project>{72496066-C318-49D4-B1E3-E199627EEA26}</Project>
+      <Name>labNetPractica3.EF.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

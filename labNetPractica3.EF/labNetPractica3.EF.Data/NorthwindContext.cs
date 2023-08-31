@@ -1,3 +1,4 @@
+using labNetPractica3.EF.Entities;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
@@ -35,6 +36,7 @@ namespace labNetPractica3.EF.Data
                 .WithMany(e => e.CustomerDemographics)
                 .Map(m => m.ToTable("CustomerCustomerDemo").MapLeftKey("CustomerTypeID").MapRightKey("CustomerID"));
 
+            //modelBuilder.Entity<Customers>().Property<>
             modelBuilder.Entity<Customers>()
                 .Property(e => e.CustomerID)
                 .IsFixedLength();

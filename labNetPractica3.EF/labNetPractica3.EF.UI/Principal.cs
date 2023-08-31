@@ -1,4 +1,5 @@
-﻿using System;
+﻿using labNetPractica3.EF.Logic.Customer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,17 @@ using System.Windows.Forms;
 
 namespace labNetPractica3.EF.UI
 {
-    public partial class Form1 : Form
+    public partial class Principal : Form
     {
-        public Form1()
+        private CustomersServicio customerServicio = new CustomersServicio();
+        public Principal()
         {
             InitializeComponent();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -53,14 +53,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Presentations\Customers\CustomersConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Presentations\Customers\CustomersConsulta.Designer.cs">
+      <DependentUpon>CustomersConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentations\Orders\OrdersConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentations\Orders\OrdersConsulta.Designer.cs">
+      <DependentUpon>OrdersConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentations\Customers\CustomersConsulta.resx">
+      <DependentUpon>CustomersConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentations\Orders\OrdersConsulta.resx">
+      <DependentUpon>OrdersConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -69,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -83,6 +105,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.png" />
+    <None Include="Resources\descarga %281%29.png" />
+    <Content Include="Resources\images.jpg" />
+    <None Include="Resources\Lupa.jpg" />
+    <None Include="Resources\sign-error-icon.png" />
+    <None Include="Resources\Plus.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\labNetPractica3.EF.Logic\labNetPractica3.EF.Logic.csproj">
+      <Project>{DCBC1019-23F3-4FDE-B971-377B1EC1ED04}</Project>
+      <Name>labNetPractica3.EF.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
