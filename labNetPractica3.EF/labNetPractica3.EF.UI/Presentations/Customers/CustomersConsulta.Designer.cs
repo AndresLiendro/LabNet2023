@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripBtnAdd = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnDel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
-            this.toolStripBtnAdd = new System.Windows.Forms.ToolStripButton();
-            this.toolStripBtnDel = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,29 @@
             this.toolStrip1.Size = new System.Drawing.Size(800, 43);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripBtnAdd
+            // 
+            this.toolStripBtnAdd.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripBtnAdd.ForeColor = System.Drawing.Color.Black;
+            this.toolStripBtnAdd.Image = global::labNetPractica3.EF.UI.Properties.Resources.Plus;
+            this.toolStripBtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnAdd.Name = "toolStripBtnAdd";
+            this.toolStripBtnAdd.Size = new System.Drawing.Size(67, 40);
+            this.toolStripBtnAdd.Text = "Agregar";
+            this.toolStripBtnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripBtnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripBtnDel
+            // 
+            this.toolStripBtnDel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripBtnDel.Image = global::labNetPractica3.EF.UI.Properties.Resources.sign_error_icon;
+            this.toolStripBtnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnDel.Name = "toolStripBtnDel";
+            this.toolStripBtnDel.Size = new System.Drawing.Size(67, 40);
+            this.toolStripBtnDel.Text = "Eliminar";
+            this.toolStripBtnDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripBtnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator1
             // 
@@ -113,29 +136,6 @@
             this.dgvCustomers.Size = new System.Drawing.Size(800, 450);
             this.dgvCustomers.TabIndex = 4;
             // 
-            // toolStripBtnAdd
-            // 
-            this.toolStripBtnAdd.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripBtnAdd.ForeColor = System.Drawing.Color.Black;
-            this.toolStripBtnAdd.Image = global::labNetPractica3.EF.UI.Properties.Resources.Plus;
-            this.toolStripBtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripBtnAdd.Name = "toolStripBtnAdd";
-            this.toolStripBtnAdd.Size = new System.Drawing.Size(67, 40);
-            this.toolStripBtnAdd.Text = "Agregar";
-            this.toolStripBtnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripBtnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripBtnDel
-            // 
-            this.toolStripBtnDel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripBtnDel.Image = global::labNetPractica3.EF.UI.Properties.Resources.sign_error_icon;
-            this.toolStripBtnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripBtnDel.Name = "toolStripBtnDel";
-            this.toolStripBtnDel.Size = new System.Drawing.Size(67, 40);
-            this.toolStripBtnDel.Text = "Eliminar";
-            this.toolStripBtnDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripBtnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
             // CustomersConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +145,7 @@
             this.Controls.Add(this.dgvCustomers);
             this.Name = "CustomersConsulta";
             this.Text = "CustomersConsulta";
+            this.Load += new System.EventHandler(this.CustomersConsulta_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();

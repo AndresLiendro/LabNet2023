@@ -48,10 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customers\CustomersDto.cs" />
-    <Compile Include="Customers\CustomersServicio.cs" />
+    <Compile Include="Customer\CustomerDto.cs" />
+    <Compile Include="Customer\CustomerServicio.cs" />
     <Compile Include="ILogic.cs" />
-    <Compile Include="Orders\OrdersDto.cs" />
+    <Compile Include="Order\OrderDto.cs" />
+    <Compile Include="Order\OrderServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

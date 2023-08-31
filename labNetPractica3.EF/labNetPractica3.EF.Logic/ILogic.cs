@@ -8,9 +8,9 @@ namespace labNetPractica3.EF.Logic
 {
     public interface ILogic<T>
     {
-        IList<T> GetAll();
+        IEnumerable<T> GetAll();
         long Insert(T dto);
         void Update(T dto);
-        void Delete(T dto);
+        void Delete(decimal ID);
     }
 }

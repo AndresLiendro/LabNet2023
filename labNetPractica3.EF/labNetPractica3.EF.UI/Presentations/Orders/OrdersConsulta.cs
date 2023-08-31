@@ -1,4 +1,5 @@
-﻿using System;
+﻿using labNetPractica3.EF.Logic.Order;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace labNetPractica3.EF.UI.Presentations.Orders
 {
     public partial class OrdersConsulta : Form
     {
+        private OrderServicio ordersServicio = new OrderServicio();
         public OrdersConsulta()
         {
             InitializeComponent();
+        }
+        private void OrdersConsulta_Load(object sender, EventArgs e)
+        {
+            dgvOrders.DataSource = ordersServicio.GetAll();
         }
         private void toolStripBtnAdd_Click(object sender, EventArgs e)
         {

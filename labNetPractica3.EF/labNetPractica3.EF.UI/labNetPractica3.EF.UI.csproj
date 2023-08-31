@@ -109,6 +109,7 @@
   <ItemGroup>
     <None Include="Resources\descarga.png" />
     <None Include="Resources\descarga %281%29.png" />
+    <None Include="Resources\descarga %282%29.png" />
     <Content Include="Resources\images.jpg" />
     <None Include="Resources\Lupa.jpg" />
     <None Include="Resources\sign-error-icon.png" />

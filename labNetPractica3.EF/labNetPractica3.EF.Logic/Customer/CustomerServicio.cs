@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace labNetPractica3.EF.Logic.Customer
 {
-    public class CustomersServicio : ILogic<CustomersDto>
+    public class CustomerServicio : ILogic<CustomerDto>
     {
 
-        public IList<CustomersDto> GetAll()
+        public IEnumerable<CustomerDto> GetAll()
         {
             using (var context = new NorthwindContext())
             {
-                return context.Customers.Where(x => x.CompanyName.Contains("")).Select(x => new CustomersDto
+                return context.Customers.Select(x => new CustomerDto
                 {
                     Id = x.CustomerID,
                     CompanyName = x.CompanyName,
@@ -23,16 +23,16 @@ namespace labNetPractica3.EF.Logic.Customer
                 }).ToList();
             }
         }
-        public long Insert(CustomersDto dto)
+        public long Insert(CustomerDto dto)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(CustomersDto dto)
+        public void Update(CustomerDto dto)
         {
             throw new NotImplementedException();
         }
-        public void Delete(CustomersDto dto)
+        public void Delete(decimal ID)
         {
             throw new NotImplementedException();
         }

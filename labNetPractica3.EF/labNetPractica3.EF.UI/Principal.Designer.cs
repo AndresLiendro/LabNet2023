@@ -30,13 +30,15 @@
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripBtnCustomers = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnOrders = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripBtnCustomers});
+            this.toolStripBtnCustomers,
+            this.toolStripBtnOrders});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -55,6 +57,20 @@
             this.toolStripBtnCustomers.Text = "Customers ";
             this.toolStripBtnCustomers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripBtnCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripBtnCustomers.Click += new System.EventHandler(this.toolStripBtnCustomers_Click);
+            // 
+            // toolStripBtnOrders
+            // 
+            this.toolStripBtnOrders.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripBtnOrders.Image = global::labNetPractica3.EF.UI.Properties.Resources.descarga__2_;
+            this.toolStripBtnOrders.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolStripBtnOrders.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnOrders.Name = "toolStripBtnOrders";
+            this.toolStripBtnOrders.Size = new System.Drawing.Size(62, 41);
+            this.toolStripBtnOrders.Text = "Orders";
+            this.toolStripBtnOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripBtnOrders.ToolTipText = "Orders";
+            this.toolStripBtnOrders.Click += new System.EventHandler(this.toolStripBtnOrders_Click);
             // 
             // Principal
             // 
@@ -77,6 +93,7 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripBtnCustomers;
+        private System.Windows.Forms.ToolStripButton toolStripBtnOrders;
     }
 }
 
