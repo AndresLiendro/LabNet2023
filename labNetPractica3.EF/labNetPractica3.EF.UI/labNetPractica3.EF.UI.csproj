@@ -53,11 +53,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentations\Customers\AltaCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentations\Customers\AltaCustomer.Designer.cs">
+      <DependentUpon>AltaCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentations\Customers\ModificarCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentations\Customers\ModificarCustomer.Designer.cs">
+      <DependentUpon>ModificarCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentations\Customers\CustomersConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentations\Customers\CustomersConsulta.Designer.cs">
       <DependentUpon>CustomersConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentations\Orders\AltaOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentations\Orders\AltaOrder.Designer.cs">
+      <DependentUpon>AltaOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentations\Orders\ModificarOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentations\Orders\ModificarOrder.Designer.cs">
+      <DependentUpon>ModificarOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentations\Orders\OrdersConsulta.cs">
       <SubType>Form</SubType>
@@ -73,8 +97,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentations\Customers\AltaCustomer.resx">
+      <DependentUpon>AltaCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentations\Customers\CustomersConsulta.resx">
       <DependentUpon>CustomersConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentations\Customers\ModificarCustomer.resx">
+      <DependentUpon>ModificarCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentations\Orders\AltaOrder.resx">
+      <DependentUpon>AltaOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentations\Orders\ModificarOrder.resx">
+      <DependentUpon>ModificarOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentations\Orders\OrdersConsulta.resx">
       <DependentUpon>OrdersConsulta.cs</DependentUpon>
