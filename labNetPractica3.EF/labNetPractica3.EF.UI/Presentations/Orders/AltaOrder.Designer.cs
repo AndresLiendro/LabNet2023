@@ -31,11 +31,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCityShip = new System.Windows.Forms.TextBox();
+            this.txtNombreShip = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRegionShip = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -68,20 +68,21 @@
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtDescripcion
+            // txtCityShip
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(110, 61);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(235, 20);
-            this.txtDescripcion.TabIndex = 10;
+            this.txtCityShip.Location = new System.Drawing.Point(110, 61);
+            this.txtCityShip.Name = "txtCityShip";
+            this.txtCityShip.Size = new System.Drawing.Size(235, 20);
+            this.txtCityShip.TabIndex = 10;
             // 
-            // txtNombre
+            // txtNombreShip
             // 
-            this.txtNombre.Location = new System.Drawing.Point(110, 35);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(235, 20);
-            this.txtNombre.TabIndex = 9;
+            this.txtNombreShip.Location = new System.Drawing.Point(110, 35);
+            this.txtNombreShip.Name = "txtNombreShip";
+            this.txtNombreShip.Size = new System.Drawing.Size(235, 20);
+            this.txtNombreShip.TabIndex = 9;
             // 
             // label2
             // 
@@ -95,18 +96,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 38);
+            this.label1.Location = new System.Drawing.Point(17, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nombre Ship";
             // 
-            // textBox1
+            // txtRegionShip
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 20);
-            this.textBox1.TabIndex = 15;
+            this.txtRegionShip.Location = new System.Drawing.Point(110, 87);
+            this.txtRegionShip.Name = "txtRegionShip";
+            this.txtRegionShip.Size = new System.Drawing.Size(235, 20);
+            this.txtRegionShip.TabIndex = 15;
             // 
             // label4
             // 
@@ -121,14 +122,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 198);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(391, 184);
+            this.Controls.Add(this.txtRegionShip);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtCityShip);
+            this.Controls.Add(this.txtNombreShip);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AltaOrder";
@@ -144,11 +145,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCityShip;
+        private System.Windows.Forms.TextBox txtNombreShip;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRegionShip;
         private System.Windows.Forms.Label label4;
     }
 }

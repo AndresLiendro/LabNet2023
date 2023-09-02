@@ -1,4 +1,5 @@
-﻿using System;
+﻿using labNetPractica3.EF.Logic.Customer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,40 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
 {
     public partial class ModificarCustomer : Form
     {
-        public ModificarCustomer()
+        private CustomerServicio customerServicio = new CustomerServicio();
+        public ModificarCustomer(long id, string company, string contactName, string contactTitle)
         {
             InitializeComponent();
+
+            nudCustomerUpdate.Value = id;
+            nudCustomerUpdate.Enabled = false;
+
+            txtCompanyName.Text = company;
+            txtCompanyName.Text = contactName;
+            txtContactTitle.Text = contactTitle;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var CustomerUpdate = new CustomerDto()
+                {
+                    Id = nudCustomerUpdate.ToString(),
+                    CompanyName = txtCompanyName.Text,
+                    ContactName = txtCompanyName.Text,
+                    ContactTitle = txtContactTitle.Text
+                };
+
+                customerServicio.Update(CustomerUpdate);
+                MessageBox.Show("La modificacion se realizo con exito");
+                this.Close();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Por favor llene todos los campos");
+            }
         }
     }
 }

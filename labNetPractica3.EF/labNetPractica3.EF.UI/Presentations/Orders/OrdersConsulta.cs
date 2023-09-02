@@ -14,6 +14,8 @@ namespace labNetPractica3.EF.UI.Presentations.Orders
     public partial class OrdersConsulta : Form
     {
         private OrderServicio ordersServicio = new OrderServicio();
+        private int SelectEntity = 0;
+        private string EntityName;
         public OrdersConsulta()
         {
             InitializeComponent();
@@ -24,17 +26,23 @@ namespace labNetPractica3.EF.UI.Presentations.Orders
         }
         private void toolStripBtnAdd_Click(object sender, EventArgs e)
         {
-
+            var fNewOrder = new AltaOrder();
+            fNewOrder.ShowDialog();
+            dgvOrders.CurrentCell = null;
         }
         private void toolStripBtnDel_Click(object sender, EventArgs e)
         {
-
+           
         }
 
-        private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            var idSeleccionado = int.Parse(dgvOrders.Rows[e.RowIndex].Cells[0].Value.ToString());
+            var shipSeleccionado = dgvOrders.Rows[e.RowIndex].Cells[1].Value.ToString();
+            var citySeleccionado = dgvOrders.Rows[e.RowIndex].Cells[2].Value.ToString();
+            var regionSeleccionado = dgvOrders.Rows[e.RowIndex].Cells[3].Value.ToString();
 
+            var fOrderUpdate = new ModificarOrder(idSeleccionado, shipSeleccionado, citySeleccionado, regionSeleccionado);
         }
-
     }
 }
