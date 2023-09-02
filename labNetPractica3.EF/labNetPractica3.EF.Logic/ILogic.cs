@@ -11,6 +11,6 @@ namespace labNetPractica3.EF.Logic
         IEnumerable<T> GetAll();
         long Insert(T dto);
         void Update(T dto);
-        void Delete(decimal ID);
+        void Delete(long ID);
     }
 }

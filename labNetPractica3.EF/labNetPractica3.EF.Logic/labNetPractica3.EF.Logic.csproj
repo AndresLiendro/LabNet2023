@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicLogic.cs" />
     <Compile Include="Customer\CustomerDto.cs" />
     <Compile Include="Customer\CustomerServicio.cs" />
     <Compile Include="ILogic.cs" />

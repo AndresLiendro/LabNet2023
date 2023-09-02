@@ -1,6 +1,5 @@
 using labNetPractica3.EF.Entities;
 using System;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
@@ -12,7 +11,6 @@ namespace labNetPractica3.EF.Data
             : base("name=NorthwindConnection")
         {
         }
-
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<CustomerDemographics> CustomerDemographics { get; set; }
         public virtual DbSet<Customers> Customers { get; set; }
@@ -27,6 +25,7 @@ namespace labNetPractica3.EF.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            
             modelBuilder.Entity<CustomerDemographics>()
                 .Property(e => e.CustomerTypeID)
                 .IsFixedLength();
@@ -36,10 +35,19 @@ namespace labNetPractica3.EF.Data
                 .WithMany(e => e.CustomerDemographics)
                 .Map(m => m.ToTable("CustomerCustomerDemo").MapLeftKey("CustomerTypeID").MapRightKey("CustomerID"));
 
-            //modelBuilder.Entity<Customers>().Property<>
             modelBuilder.Entity<Customers>()
                 .Property(e => e.CustomerID)
+                .HasMaxLength(5)
                 .IsFixedLength();
+
+            modelBuilder.Entity<Customers>()
+                .Property(e => e.CompanyName)
+                .IsRequired()
+                .HasMaxLength(20);
+
+            modelBuilder.Entity<Customers>()
+                .Property(e => e.ContactName)
+                .HasMaxLength(25);
 
             modelBuilder.Entity<Employees>()
                 .HasMany(e => e.Employees1)
@@ -92,8 +100,8 @@ namespace labNetPractica3.EF.Data
                 .HasForeignKey(e => e.ShipVia);
 
             modelBuilder.Entity<Territories>()
-                .Property(e => e.TerritoryDescription)
-                .IsFixedLength();
+                        .Property(e => e.TerritoryDescription)
+                        .IsFixedLength();
         }
     }
 }

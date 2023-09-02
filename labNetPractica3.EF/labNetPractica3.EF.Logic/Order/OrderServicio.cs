@@ -8,25 +8,27 @@ using System.Threading.Tasks;
 
 namespace labNetPractica3.EF.Logic.Order
 {
-    public class OrderServicio : ILogic<OrderDto>
+    public class OrderServicio : BasicLogic, ILogic<OrderDto>
     {
         public IEnumerable<OrderDto> GetAll()
         {
-            using (var context = new NorthwindContext())
+            using (context)
             {
-                return context.Orders.Select(x => new OrderDto
+                var orders = context.Orders.Select(x => new OrderDto
                 {
                     Id = x.OrderID,
                     Ship = x.ShipName,
                     City = x.ShipCity,
                     Region = x.ShipRegion,
                 }).ToList();
+
+                return orders;
             }
         }
 
         public long Insert(OrderDto dto)
         {
-            using (var context = new NorthwindContext()) 
+            using (context) 
             {
                 var NewOrder = new Orders()
                 {
@@ -44,29 +46,48 @@ namespace labNetPractica3.EF.Logic.Order
 
         public void Update(OrderDto dto)
         {
-            using (var context = new NorthwindContext())
+            using (context)
             {
-                var UpdateOrder = context.Orders.FirstOrDefault(x => x.OrderID == dto.Id);
+                //var UpdateOrder = context.Orders.FirstOrDefault(x => x.OrderID == dto.Id);
 
-                if (UpdateOrder == null)
-                    throw new Exception("La Orden no existe");
+                //if (UpdateOrder == null)
+                //    throw new Exception("La Orden no existe");
 
-                UpdateOrder.ShipName = dto.Ship;
-                UpdateOrder.ShipCity = dto.City;
-                UpdateOrder.ShipRegion = dto.Region;
+                //UpdateOrder.ShipName = dto.Ship;
+                //UpdateOrder.ShipCity = dto.City;
+                //UpdateOrder.ShipRegion = dto.Region;
 
-                context.SaveChanges();
+                //context.SaveChanges();
+
+                var UpdateOrder = context.Orders.FirstOrDefault(o => o.OrderID == dto.Id);
+
+                if (UpdateOrder != null)
+                {
+                    UpdateOrder.ShipName = dto.Ship;
+                    UpdateOrder.ShipCity = dto.City;
+                    UpdateOrder.ShipRegion = dto.Region;
+
+                    context.SaveChanges();
+                }
             }
         }
-        public void Delete(decimal ID)
+        public void Delete(long ID)
         {
-            using (var context = new NorthwindContext())
+            using (context)
             {
-                var DeleteOrder = context.Orders.FirstOrDefault(x => x.OrderID == ID);
+                //var DeleteOrder = context.Orders.FirstOrDefault(x => x.OrderID == ID);
 
-                context.Orders.Remove(DeleteOrder);
+                //context.Orders.Remove(DeleteOrder);
 
-                context.SaveChanges();
+                //context.SaveChanges();
+
+                var DeleteOrder = context.Orders.FirstOrDefault(o => o.OrderID == ID);
+
+                if (DeleteOrder != null)
+                {
+                    context.Orders.Remove(DeleteOrder);
+                    context.SaveChanges();
+                }
             }
         }
     }
