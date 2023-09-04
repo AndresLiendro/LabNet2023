@@ -10,7 +10,7 @@ namespace labNetPractica4.LINQ.LOGIC.Categories
     {
         public IEnumerable<CategoriesDto> GetConsulta()
         {
-            
+            return null;
         }
     }
 }
