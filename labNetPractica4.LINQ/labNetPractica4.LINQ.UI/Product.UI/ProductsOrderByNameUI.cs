@@ -1,23 +1,21 @@
-﻿using labNetPractica4.LINQ.LOGIC.Categories;
+﻿using labNetPractica4.LINQ.LOGIC.Product;
+using labNetPractica4.LINQ.LOGIC.Product.Dtos;
 using labNetPractica4.LINQ.UI.Functionalities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace labNetPractica4.LINQ.UI.Product.UI
 {
     public class ProductsOrderByNameUI
     {
-        public static void ObtenerProductCategories()
+        public static void ObtenerProductOrderByName()
         {
             try
             {
                 AppClean.ClearConsole();
-                CategoriesServicio productCategories = new CategoriesServicio();
-                var productCategoriesList = productCategories.GetConsulta();
-                PrintProductsCategory(productCategoriesList);
+                ProductsOrderByName productOrderByName = new ProductsOrderByName();
+                var productOrderByNameList = productOrderByName.GetConsulta();
+                PrintProductsOrderByName(productOrderByNameList);
 
             }
             catch (Exception ex)
@@ -30,7 +28,7 @@ namespace labNetPractica4.LINQ.UI.Product.UI
             }
         }
 
-        public static void PrintProductsCategory(IEnumerable<CategoriesDto> query)
+        public static void PrintProductsOrderByName(IEnumerable<ProductsOrderByNameDto> query)
         {
             foreach (var item in query)
             {
