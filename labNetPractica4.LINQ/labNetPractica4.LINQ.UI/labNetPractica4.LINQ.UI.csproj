@@ -50,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.UI\CustomersFirstThreeRowUI.cs" />
+    <Compile Include="Customer.UI\CustomersMayMinUI.cs" />
+    <Compile Include="Customer.UI\CustomersOrderQuantityUI.cs" />
+    <Compile Include="Customer.UI\CustomersOrdersUI.cs" />
+    <Compile Include="Customer.UI\CustomersUI.cs" />
+    <Compile Include="Customer.UI\CustomersWithWARegionUI.cs" />
+    <Compile Include="Functionalities\AppClean.cs" />
+    <Compile Include="Functionalities\EntryValidations.cs" />
+    <Compile Include="Functionalities\JumpOfLine.cs" />
+    <Compile Include="Functionalities\Tries.cs" />
+    <Compile Include="Functionalities\UserInput.cs" />
+    <Compile Include="Menus\MainMenu.cs" />
     <Compile Include="Messages\AppMessages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,7 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Menus\" />
+    <Folder Include="Category.UI\" />
+    <Folder Include="Product.UI\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\labNetPractica4.LINQ.ENTITIES\labNetPractica4.LINQ.ENTITIES.csproj">
