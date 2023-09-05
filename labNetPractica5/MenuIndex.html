@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio .Net 2023</title>
+</head>
+
+<body id ="Pagina">
+
+    <h1> Trabajo Practico N° 5 </h1>
+
+    <div class ="Main" style="text-align: center;">
+
+        <h2 id ="appTitle">Adivina el número <span>(entre 1 y 20)</span></h2>
+
+        <div>
+            <b>Ingrese un número:</b>
+            <input type="number" id ="txtNumero" placeholder="Ingrese un Número" required>
+        </div>
+
+        <div>
+            <button class="buttons" id = "txtAdivinar">Intentar</button>
+            <button class="buttons" id = "txtReiniciar">Reiniciar</button>
+        </div>
+
+        <div id="label">
+            <label>
+                <label id="mensajeDinamico"></label>
+            </label>
+            <hr>
+            <label>Score: 
+                <label id="puntaje"></label>
+            </label>
+            <hr>
+            <label>Score más alto: 
+                <label id="puntajeAlto"></label>
+            </label>
+        </div>
+    </div>
+
+    <dialog id="modal1">
+        <h2>You WIN!</h2>
+            <h3 class="nroGenerado"></h3>
+            <button id="btnCerrar">Cerrar</button>
+    </dialog>
+
+    <dialog id="modal2">
+        <h2>You LOST!</h2>
+            <h3 class="nroGenerado"></h3>
+            <button id="btnCerrar2">Cerrar</button>
+    </dialog>
+    
+    <script src="js/Index.js"></script>
+    
+</body>
+</html>
