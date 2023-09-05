@@ -51,17 +51,6 @@
     <Compile Include="Category\CategoriesDto.cs" />
     <Compile Include="Category\CategoriesServicio.cs" />
     <Compile Include="ContextDb.cs" />
-    <Compile Include="Customer\CustomerFirstThreeRow.cs" />
-    <Compile Include="Customer\CustomerMayMin.cs" />
-    <Compile Include="Customer\CustomerOrderQuantity.cs" />
-    <Compile Include="Customer\CustomerOrders.cs" />
-    <Compile Include="Customer\CustomersWithRegionWA.cs" />
-    <Compile Include="Customer\Dtos\CustomerFirstThreeRowDto.cs" />
-    <Compile Include="Customer\Dtos\CustomerMayMinDto.cs" />
-    <Compile Include="Customer\Dtos\CustomerOrderQuantityDto.cs" />
-    <Compile Include="Customer\Dtos\CustomerOrdersDto.cs" />
-    <Compile Include="Customer\Dtos\CustomersDto.cs" />
-    <Compile Include="Customer\CustomersServicio.cs" />
     <Compile Include="IGet.cs" />
     <Compile Include="Product\Dtos\ProductsOrderByNameDto.cs" />
     <Compile Include="Product\Dtos\ProductsWithoutStockMayMenDto.cs" />
