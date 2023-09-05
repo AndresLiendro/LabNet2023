@@ -32,7 +32,7 @@ namespace labNetPractica4.LINQ.UI.Product.UI
         {
             foreach (var item in query)
             {
-                Messages.AppMessages.MessageProductCategorie(item);
+                Messages.AppMessages.MessageProductOrderByName(item);
             }
         }
     }
