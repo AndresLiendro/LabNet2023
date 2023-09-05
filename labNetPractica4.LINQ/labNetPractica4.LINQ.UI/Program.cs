@@ -1,4 +1,5 @@
-﻿using System;
+﻿using labNetPractica4.LINQ.UI.Functionalities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace labNetPractica4.LINQ.UI
     {
         static void Main(string[] args)
         {
+            Messages.AppMessages.MessagesMainMenu();
+            Menus.MainMenu.AppMainMenu(UserInput.OnlyNumbers());
         }
     }
 }

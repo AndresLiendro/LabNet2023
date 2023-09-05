@@ -14,7 +14,7 @@ namespace labNetPractica4.LINQ.UI.Functionalities
             Console.WriteLine(message);
             string validNumber = Console.ReadLine();
 
-            while (!int.TryParse(validNumber, out valor)
+            while (!int.TryParse(validNumber, out valor))
             {
                 Console.WriteLine(message);
                 validNumber = Console.ReadLine();
