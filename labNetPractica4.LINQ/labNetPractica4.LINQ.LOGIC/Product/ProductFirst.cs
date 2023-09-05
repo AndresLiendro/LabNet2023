@@ -9,7 +9,7 @@ namespace labNetPractica4.LINQ.LOGIC.Product
 {
     public class ProductFirst : ContextDb
     {
-        public static void GetConsult()
+        protected void GetConsult()
         {
             using (context)
             {
