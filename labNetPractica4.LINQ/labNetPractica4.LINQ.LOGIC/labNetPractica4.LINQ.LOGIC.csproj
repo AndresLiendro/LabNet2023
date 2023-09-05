@@ -55,6 +55,7 @@
     <Compile Include="Customer\CustomerMayMin.cs" />
     <Compile Include="Customer\CustomerOrderQuantity.cs" />
     <Compile Include="Customer\CustomerOrders.cs" />
+    <Compile Include="Customer\CustomersWithRegionWA.cs" />
     <Compile Include="Customer\Dtos\CustomerFirstThreeRowDto.cs" />
     <Compile Include="Customer\Dtos\CustomerMayMinDto.cs" />
     <Compile Include="Customer\Dtos\CustomerOrderQuantityDto.cs" />
