@@ -16,9 +16,9 @@ namespace labNetPractica4.LINQ.UI.Product.UI
 			try
 			{
 				AppClean.ClearConsole();
-				ProductsWithStock productWithStock = new ProductsWithStock();
-				var productsList = productWithStock.GetConsulta();
-				PrintProductWithStock(productsList);
+				ProductsWithStock producrConStock = new ProductsWithStock();
+				var productsLista = producrConStock.GetConsulta();
+				PrintProductWithStock(productsLista);
 			}
 			catch (Exception ex)
 			{

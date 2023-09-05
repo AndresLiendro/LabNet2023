@@ -67,7 +67,8 @@
     <Compile Include="Product.UI\ProductsFirstElementUI.cs" />
     <Compile Include="Product.UI\ProductsFirstUI.cs" />
     <Compile Include="Product.UI\ProductsOrderByNameUI.cs" />
-    <Compile Include="Product.UI\ProductWithStock.cs" />
+    <Compile Include="Product.UI\ProductsWithoutStockUI.cs" />
+    <Compile Include="Product.UI\ProductWithStockUI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
