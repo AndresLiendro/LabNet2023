@@ -1,11 +1,8 @@
-﻿using labNetPractica4.LINQ.LOGIC.Customers;
-using labNetPractica4.LINQ.LOGIC.Customers.Dtos;
+﻿using labNetPractica4.LINQ.LOGIC.Costumer;
+using labNetPractica4.LINQ.LOGIC.Costumer.Dto;
 using labNetPractica4.LINQ.UI.Functionalities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace labNetPractica4.LINQ.UI.Customer.UI
 {
@@ -16,7 +13,7 @@ namespace labNetPractica4.LINQ.UI.Customer.UI
 			try
 			{
 				AppClean.ClearConsole();
-				CustomerMayMin customerMayulaMinu = new CustomerMayMin();
+				CustomersMayMin customerMayulaMinu = new CustomersMayMin();
 				var customerList = customerMayulaMinu.GetConsulta();
 				PrintCustomerMayMin(customerList);
 			}
@@ -30,7 +27,7 @@ namespace labNetPractica4.LINQ.UI.Customer.UI
 			}
 		}
 
-		public static void PrintCustomerMayMin(IEnumerable<CustomerMayMinDto> query)
+		public static void PrintCustomerMayMin(IEnumerable<CustomersMayMinDto> query)
 		{
 			foreach (var item in query)
 			{
