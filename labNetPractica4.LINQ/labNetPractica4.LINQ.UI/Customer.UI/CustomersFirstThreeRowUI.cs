@@ -11,7 +11,7 @@ namespace labNetPractica4.LINQ.UI.Customer.UI
 {
     public class CustomersFirstThreeRowUI
     {
-        public static void CustomersFirstThreeRow()
+        public static void GetCustomersFirstThreeRow()
         {
             try
             {
