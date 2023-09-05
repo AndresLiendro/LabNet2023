@@ -1,13 +1,8 @@
 ﻿using labNetPractica4.LINQ.ENTITIES;
 using labNetPractica4.LINQ.LOGIC.Categories;
-using labNetPractica4.LINQ.LOGIC.Customers;
-using labNetPractica4.LINQ.LOGIC.Customers.Dtos;
+using labNetPractica4.LINQ.LOGIC.Costumer.Dto;
 using labNetPractica4.LINQ.LOGIC.Product.Dtos;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace labNetPractica4.LINQ.UI.Messages
 {
@@ -35,11 +30,11 @@ namespace labNetPractica4.LINQ.UI.Messages
         {
             Console.WriteLine($"Nombre Cliente: {cd.Name}");
         }
-        public static void MessageCustomerOrderQuantity(CustomerOrderQuantityDto cco)
+        public static void MessageCustomerOrderQuantity(CustomersOrdersQuantityDto cco)
         {
-            Console.WriteLine($"Nombre cliente: {cco.CustomerName} - Ordenes: {cco.OrderQuantity}");
+            Console.WriteLine($"Nombre cliente: {cco.CustomerName} - Ordenes: {cco.CustomerOrder}");
         }
-        public static void MessageCustomerFirstThreeRowDto(CustomerFirstThreeRowDto cpt)
+        public static void MessageCustomerFirstThreeRowDto(CustomersFirstThreeRowDto cpt)
         {
             Console.WriteLine($"Nombre: {cpt.Name} - Region: {cpt.Region}");
         }
@@ -49,12 +44,12 @@ namespace labNetPractica4.LINQ.UI.Messages
             Console.WriteLine($"Nombre: {cs.ContactName} - Region: {cs.Region}");
         }
 
-        public static void MessageCustomerMayMen(CustomerMayMinDto cmn)
+        public static void MessageCustomerMayMen(CustomersMayMinDto cmn)
         {
             Console.WriteLine($"Nombre en Mayuscula: {cmn.Mayuscula} - Nombre en Miniscula: {cmn.Minuscula}");
         }
 
-        public static void MessageeCustomerOrders(CustomerOrdersDto co)
+        public static void MessageeCustomerOrders(CustomersOrdersDto co)
         {
             Console.WriteLine($"Nombre: {co.CustomerName} - Region: {co.Region} - Fecha: {co.OrderDate}");
         }

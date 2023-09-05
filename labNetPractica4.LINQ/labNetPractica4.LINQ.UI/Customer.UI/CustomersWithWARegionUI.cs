@@ -1,5 +1,5 @@
 ﻿using labNetPractica4.LINQ.ENTITIES;
-using labNetPractica4.LINQ.LOGIC.Customer;
+using labNetPractica4.LINQ.LOGIC.Costumer;
 using labNetPractica4.LINQ.UI.Functionalities;
 using System;
 using System.Collections.Generic;
@@ -16,10 +16,10 @@ namespace labNetPractica4.LINQ.UI.Customer.UI
 			try
 			{
 				AppClean.ClearConsole();
-				//CustomersWhitRegionWA customerWithRegionWA = new CustomersWhitRegionWA();
-				//var customersList = customerWithRegionWA.GetConsulta();
-				//PrintCustomersWithRegionWA(customersList);
-			}
+                CustomersWhitRegionWA customerWithRegionWA = new CustomersWhitRegionWA();
+                var customersList = customerWithRegionWA.GetConsulta();
+                PrintCustomersWithRegionWA(customersList);
+            }
 			catch (Exception ex)
 			{
 

@@ -63,6 +63,9 @@
     <Compile Include="Functionalities\UserInput.cs" />
     <Compile Include="Menus\MainMenu.cs" />
     <Compile Include="Messages\AppMessages.cs" />
+    <Compile Include="Product.UI\ProductsCaregoriesUI.cs" />
+    <Compile Include="Product.UI\ProductsFirstUI.cs" />
+    <Compile Include="Product.UI\ProductsOrderByNameUI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,10 +73,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Category.UI\" />
-    <Folder Include="Product.UI\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\labNetPractica4.LINQ.ENTITIES\labNetPractica4.LINQ.ENTITIES.csproj">
       <Project>{889B1248-9BFA-4D69-8D1B-B81E62703F0B}</Project>

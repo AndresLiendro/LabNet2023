@@ -1,5 +1,5 @@
-﻿using labNetPractica4.LINQ.LOGIC.Customers;
-using labNetPractica4.LINQ.LOGIC.Customers.Dtos;
+﻿using labNetPractica4.LINQ.LOGIC.Costumer;
+using labNetPractica4.LINQ.LOGIC.Costumer.Dto;
 using labNetPractica4.LINQ.UI.Functionalities;
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace labNetPractica4.LINQ.UI.Customer.UI
             try
             {
                 AppClean.ClearConsole();
-                CustomerFirstThreeRow customerFirstThreeRow = new CustomerFirstThreeRow();
+                CustomersFirstThreeRow customerFirstThreeRow = new CustomersFirstThreeRow();
                 var customerThreeRowList = customerFirstThreeRow.GetConsulta();
                 PrintCustomersFirstThreeRow(customerThreeRowList);
             }
@@ -30,7 +30,7 @@ namespace labNetPractica4.LINQ.UI.Customer.UI
             }
         }
 
-        public static void PrintCustomersFirstThreeRow(IEnumerable<CustomerFirstThreeRowDto> query)
+        public static void PrintCustomersFirstThreeRow(IEnumerable<CustomersFirstThreeRowDto> query)
         {
             foreach (var item in query)
             {

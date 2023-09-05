@@ -1,11 +1,8 @@
-﻿using labNetPractica4.LINQ.LOGIC.Customers;
-using labNetPractica4.LINQ.LOGIC.Customers.Dtos;
+﻿using labNetPractica4.LINQ.LOGIC.Costumer;
+using labNetPractica4.LINQ.LOGIC.Costumer.Dto;
 using labNetPractica4.LINQ.UI.Functionalities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace labNetPractica4.LINQ.UI.Customer.UI
 {
@@ -16,7 +13,7 @@ namespace labNetPractica4.LINQ.UI.Customer.UI
             try
             {
                 AppClean.ClearConsole();
-                CustomerOrderQuantity customerOrdersQ = new CustomerOrderQuantity();
+                CustomersOrdersQuantity customerOrdersQ = new CustomersOrdersQuantity();
                 var customerOrdersQList = customerOrdersQ.GetConsulta();
                 PrintCustomersOrdersQuantity(customerOrdersQList);
             }
@@ -30,7 +27,7 @@ namespace labNetPractica4.LINQ.UI.Customer.UI
             }
         }
 
-        public static void PrintCustomersOrdersQuantity(IEnumerable<CustomerOrderQuantityDto> query)
+        public static void PrintCustomersOrdersQuantity(IEnumerable<CustomersOrdersQuantityDto> query)
         {
             foreach (var item in query)
             {
