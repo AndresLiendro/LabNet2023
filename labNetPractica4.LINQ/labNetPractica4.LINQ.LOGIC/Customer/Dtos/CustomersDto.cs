@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace labNetPractica4.LINQ.LOGIC.Customers
 {
-    public class CostumersServicio
+    public class CustomersDto
     {
+        public string Id { get; set; }
+        public string Name { get; set; }
     }
 }

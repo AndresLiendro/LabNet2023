@@ -48,14 +48,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categories\CategoriesDto.cs" />
-    <Compile Include="Categories\CategoriesServicio.cs" />
+    <Compile Include="Category\CategoriesDto.cs" />
+    <Compile Include="Category\CategoriesServicio.cs" />
     <Compile Include="ContextDb.cs" />
-    <Compile Include="Customers\CostumersDto.cs" />
-    <Compile Include="Customers\CostumersServicio.cs" />
+    <Compile Include="Customer\CustomerFirstThreeRow.cs" />
+    <Compile Include="Customer\CustomerMayMin.cs" />
+    <Compile Include="Customer\CustomerOrderQuantity.cs" />
+    <Compile Include="Customer\CustomerOrders.cs" />
+    <Compile Include="Customer\Dtos\CustomerFirstThreeRowDto.cs" />
+    <Compile Include="Customer\Dtos\CustomerMayMinDto.cs" />
+    <Compile Include="Customer\Dtos\CustomerOrderQuantityDto.cs" />
+    <Compile Include="Customer\Dtos\CustomerOrdersDto.cs" />
+    <Compile Include="Customer\Dtos\CustomersDto.cs" />
+    <Compile Include="Customer\CustomersServicio.cs" />
     <Compile Include="IGet.cs" />
-    <Compile Include="Products\ProductsDto.cs" />
-    <Compile Include="Products\ProductsServicio.cs" />
+    <Compile Include="Product\Dtos\ProductsOrderByNameDto.cs" />
+    <Compile Include="Product\Dtos\ProductsWithoutStockMayMenDto.cs" />
+    <Compile Include="Product\Dtos\ProductsWithStockDto.cs" />
+    <Compile Include="Product\Message\ProductMessage.cs" />
+    <Compile Include="Product\ProductFirst.cs" />
+    <Compile Include="Product\ProductsFirstElement.cs" />
+    <Compile Include="Product\ProductsOrderByName.cs" />
+    <Compile Include="Product\ProductsWithStock.cs" />
+    <Compile Include="Product\ProductWithoutStock.cs" />
+    <Compile Include="Product\ProductWithoutStockMayMen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,8 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\labNetPractica4.LINQ.DATA\labNetPractica4.LINQ.DATA.csproj">
-      <Project>{49CE026B-9440-4949-A9A9-CD44AD1237E2}</Project>
+      <Project>{49ce026b-9440-4949-a9a9-cd44ad1237e2}</Project>
       <Name>labNetPractica4.LINQ.DATA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\labNetPractica4.LINQ.ENTITIES\labNetPractica4.LINQ.ENTITIES.csproj">
+      <Project>{889b1248-9bfa-4d69-8d1b-b81e62703f0b}</Project>
+      <Name>labNetPractica4.LINQ.ENTITIES</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

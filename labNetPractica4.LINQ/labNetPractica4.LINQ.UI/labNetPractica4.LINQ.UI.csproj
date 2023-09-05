@@ -50,12 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Messages\AppMessages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Menus\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\labNetPractica4.LINQ.ENTITIES\labNetPractica4.LINQ.ENTITIES.csproj">
+      <Project>{889B1248-9BFA-4D69-8D1B-B81E62703F0B}</Project>
+      <Name>labNetPractica4.LINQ.ENTITIES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\labNetPractica4.LINQ.LOGIC\labNetPractica4.LINQ.LOGIC.csproj">
+      <Project>{835F095A-287A-4702-AA0B-1CCE71C7C0AE}</Project>
+      <Name>labNetPractica4.LINQ.LOGIC</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
