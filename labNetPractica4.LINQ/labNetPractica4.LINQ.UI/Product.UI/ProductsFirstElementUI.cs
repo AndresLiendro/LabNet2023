@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace labNetPractica4.LINQ.UI.Product.UI
 {
-    public class ProductsFirstUI
+    public  class ProductsFirstElementUI
     {
-        public static void ObtenerPrimerProducto()
+        public static void ObtenerProductPrimerElemento()
         {
             AppClean.ClearConsole();
-            ProductFirst.GetConsult();
+            ProductsFirstElement productPrimerElemento = new ProductsFirstElement();
+            productPrimerElemento.GetConsult();
             Tries.TryAgain();
         }
     }

@@ -64,8 +64,10 @@
     <Compile Include="Menus\MainMenu.cs" />
     <Compile Include="Messages\AppMessages.cs" />
     <Compile Include="Product.UI\ProductsCaregoriesUI.cs" />
+    <Compile Include="Product.UI\ProductsFirstElementUI.cs" />
     <Compile Include="Product.UI\ProductsFirstUI.cs" />
     <Compile Include="Product.UI\ProductsOrderByNameUI.cs" />
+    <Compile Include="Product.UI\ProductWithStock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
