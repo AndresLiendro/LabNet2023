@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace labNetPractica4.LINQ.UI.Product.UI
 {
-    public class ProductWithStock
+    public class ProductWithStockUI
     {
 		public static void ObtenerProductosConStock()
 		{
 			try
 			{
 				AppClean.ClearConsole();
-				ProductsWithStock producrConStock = new ProductsWithStock();
-				var productsLista = producrConStock.GetConsulta();
-				PrintProductWithStock(productsLista);
+				ProductsWithStock productWithStock = new ProductsWithStock();
+				var productsList = productWithStock.GetConsulta();
+				PrintProductWithStock(productsList);
 			}
 			catch (Exception ex)
 			{

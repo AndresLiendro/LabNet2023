@@ -9,12 +9,23 @@ namespace labNetPractica4.LINQ.LOGIC.Product
 {
     public class ProductFirst : ContextDb
     {
-        protected void GetConsult()
+        public bool GetConsult()
         {
             using (context)
             {
                 var query = context.Products.First();
                 ProductMessage.FirstProductMessage(query);
+
+                if (query != null)
+                {
+                    ProductMessage.ExistProductMessage(query);
+                    return true;
+                }
+                else
+                {
+                    ProductMessage.NoExistProductMessage();
+                    return false;
+                }
             }
         }
     }
