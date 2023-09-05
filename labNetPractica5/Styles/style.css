@@ -1,11 +1,10 @@
 #Pagina {
-    size: 16px;
+    size: 20px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
 
 .Main {
-    text-align: center;
     padding-left: 500px;
     padding-right: 500px;
     display: flex;
@@ -19,13 +18,59 @@
     background: linear-gradient(#7FFFD4, #F0FFFF);
 }
 
+.Main h2 {
+    margin: 3vh 0;
+    color: midnightblue;
+    text-shadow: 0 0 4px lightblue;
+    font-weight: 900;
+    font-size: 150%;
+}
+
+.Main b {
+    margin: 3vh 0;
+    color: midnightblue;
+    text-shadow: 0 0 4px lightblue;
+    font-weight: 900;
+    font-size: 100%;
+}
+
+#txtNumero {
+    border-radius: 5px;
+    background: linear-gradient(#3df1b5d3, #02b3b3);
+    text-shadow: 0 0 4px lightblue;
+    font-weight: 500;
+    font-size: 100%;
+    color: black;
+}
+
 .buttons {
     border-radius: 13px;
     margin-top: 16px;
     font-size: 18px;
-    background-color: white;
+    background: linear-gradient(#7FFFD4, #F0FFFF);
 }
+
+#txtAdivinar, #txtReiniciar{
+    font-weight: 500;
+    text-shadow: 0 0 4px lightblue;
+    background: linear-gradient(#3df1b5d3, #02b3b3);
+    color: black;
+}
+
 .buttons:hover {
 
     box-shadow: 2px 2px 8px rgb(107, 47, 47);
+}
+
+label {
+    margin: 15px;
+    color: midnightblue;
+    text-shadow: 0 0 4px lightblue;
+    font-weight: 900;
+    font-size: 100%;
+}
+
+hr {
+    border-radius: 13px;
+    margin-top: 16px;
 }
