@@ -4,7 +4,6 @@ const numberIngresado = document.getElementById('txtNumero');
 const guess = document.getElementById('txtAdivinar');
 const reboot = document.getElementById('txtReiniciar');
 
-const lblPista = document.getElementById('pista');
 const lblMensaje = document.getElementById('mensajeDinamico');
 const lblScore = document.getElementById('puntaje');
 const lblPuntacionAlta = document.getElementById('puntajeAlto');
@@ -16,46 +15,51 @@ const mdlModal1 = document.getElementById('modal1');
 const mdlModal2 = document.getElementById('modal2')
 
 let nroGenerado = Math.floor(Math.random() * 20) + 1;
+
 let puntaje = 20;
 InicialSocre();
+
 let puntajeMax = 0;
 InicialMaxScore();
-mdlModal.style.display = "none";
+
+mdlModal1.style.display = "none";
 mdlModal2.style.display = "none";
 
 function GuessNumber() {
-    if (numberIngresado.Value.trim() === "") {
+    if (numberIngresado.value.trim() === "") {
         MsgCampoVacio();
     }
     else {
-        MayorMenor();
-        WinOrLose();
+        const entry = parseInt(numberIngresado.value, 10);
+        MayorMenor(entry);
     }
     
+    WinOrLose();
     Focus();
+}
+
+function MayorMenor(entry) {
+    if (entry > nroGenerado) {
+        Menor();
+    }
+    
+    if (entry < nroGenerado) {
+        Mayor();
+    }
 }
 
 function Mayor() {
 
-    lblMensaje.textContent = 'El numero es muy alto!';
+    lblMensaje.textContent = 'El numero es más alto';
     puntaje--;
     lblScore.textContent = puntaje;
 }
 
 function Menor() {
 
-    lblMensaje.textContent = 'El numero es muy bajo!';
+    lblMensaje.textContent = 'El numero es más bajo';
     puntaje--;
     lblScore.textContent = puntaje;
-}
-
-function MayorMenor() {
-    if (numberIngresado.Value > nroGenerado) {
-        Mayor();
-    }
-    else if (numberIngresado < nroGenerado) {
-        Menor();
-    }
 }
 
 function WinOrLose() {
@@ -71,20 +75,22 @@ function WinOrLose() {
         }
     }
 
-    if (puntaje == 0) {
+    if (puntaje === 0) {
 
         YouLost();
     }
 }
 
 function YouWin() {
-    MainPage.style.background = "greem",
+    MainPage.style.background = "green",
     lblMensaje.textContent = "Adivinaste el número."
     lblScore.textContent = puntaje;
-    mdlModal1.showModal();
+    mdlModal1.show();
     DisableButtons();
     mdlModal1.style.display = "flex";
-    btnCerrar();
+    btnCerrar.addEventListener('click', () => {
+        mdlModal1.close();
+    });
 }
 
 function YouLost() {
@@ -92,10 +98,13 @@ function YouLost() {
     lblMensaje.textContent = "Perdiste"
     lblScore.textContent = 0;
     puntaje = 20;
-    mdlModal2.showModal();
+    mdlModal2.show();
     DisableButtons();
     mdlModal2.style.display = "flex";
-    btnCerrar2();
+    btnCerrar2.addEventListener('click', () => {
+        mdlModal2.close();
+    });
+    
 }
 
 function InicialSocre() {
@@ -107,7 +116,7 @@ function InicialMaxScore() {
 }
 
 function MaxScore() {
-    lblPuntacionAlt.textContent = puntajeMax;
+    lblPuntacionAlta.textContent = puntajeMax;
 }
 
 function MsgCampoVacio() {
@@ -135,7 +144,7 @@ function Reboot() {
     lblMensaje.textContent = "";
     puntaje = 20;
     lblScore.textContent = puntaje;
-    nroGenerado = Math.floor(Math.random() * 3) + 1;
+    nroGenerado = Math.floor(Math.random() * 20) + 1;
     EnabledButtons(); 
 }
 
@@ -145,16 +154,6 @@ guess.addEventListener('click', () => {
 
 reboot.addEventListener('click', () => {
     Reboot();
-});
-
-btnCerrar.addEventListener('click', () => {
-    mdlModal.close();
-    mdlModal.style.display = "none";
-    mdlModal2.style.display = "none";
-});
-
-btnCerrar2.addEventListener('click', () => {
-    mdlModal.close();
-    mdlModal.style.display = "none";
-    mdlModal2.style.display = "none";
+    mdlModal1.close();
+    mdlModal2.close();
 });
