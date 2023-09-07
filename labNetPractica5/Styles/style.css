@@ -1,3 +1,8 @@
+title {
+    font-family: 'Times New Roman', Times, serif;
+    border: blanchedalmond;
+    border-radius: 5%;
+}
 #Pagina {
     size: 20px;
     font-family: 'Times New Roman', Times, serif;
@@ -8,9 +13,10 @@
     padding-left: 500px;
     padding-right: 500px;
     display: flex;
-    margin: 3vh auto;
+    margin: 3vh auto ;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
+    height: 60%;
     border: 5px solid lightblue;
     padding: 5em;
     border-radius: 1rem;
@@ -18,20 +24,45 @@
     background: linear-gradient(#7FFFD4, #F0FFFF);
 }
 
-.Main h2 {
-    margin: 3vh 0;
+.Main b, h2, h3 {
     color: midnightblue;
     text-shadow: 0 0 4px lightblue;
     font-weight: 900;
     font-size: 150%;
 }
 
-.Main b {
-    margin: 3vh 0;
+.Main hr {
+    border-radius: 13px;
+    margin-top: 16px;
+}
+
+.Main button {
+    border-radius: 13px;
+    margin-left : 5%;
+    margin-top: 16px;
+    font-size: 18px;
+    background: linear-gradient(#7FFFD4, #F0FFFF);
+}
+
+.Main buttons:hover {
+    box-shadow: 2px 2px 8px rgb(107, 47, 47);
+}
+
+.Main label {
+    margin-top: 0 10px;
     color: midnightblue;
     text-shadow: 0 0 4px lightblue;
     font-weight: 900;
     font-size: 100%;
+}
+
+.Main dialog {
+    width: 50%;
+    border: 3px solid black;
+    padding: 1%;
+    border-radius: 1rem;
+    background: #00FFFF;
+    background: linear-gradient(#7FFFD4, #F0FFFF);
 }
 
 #txtNumero {
@@ -43,34 +74,9 @@
     color: black;
 }
 
-.buttons {
-    border-radius: 13px;
-    margin-top: 16px;
-    font-size: 18px;
-    background: linear-gradient(#7FFFD4, #F0FFFF);
-}
-
 #txtAdivinar, #txtReiniciar{
     font-weight: 500;
     text-shadow: 0 0 4px lightblue;
     background: linear-gradient(#3df1b5d3, #02b3b3);
     color: black;
-}
-
-.buttons:hover {
-
-    box-shadow: 2px 2px 8px rgb(107, 47, 47);
-}
-
-label {
-    margin-top: 0 14px;
-    color: midnightblue;
-    text-shadow: 0 0 4px lightblue;
-    font-weight: 900;
-    font-size: 100%;
-}
-
-hr {
-    border-radius: 13px;
-    margin-top: 16px;
 }

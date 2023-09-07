@@ -7,12 +7,14 @@ const reboot = document.getElementById('txtReiniciar');
 const lblMensaje = document.getElementById('mensajeDinamico');
 const lblScore = document.getElementById('puntaje');
 const lblPuntacionAlta = document.getElementById('puntajeAlto');
+const lblNroGenerado = document.getElementsByClassName('nroGenerado')
 
-const btnCerrar = document.getElementById('btnCerrar')
-const btnCerrar2 = document.getElementById('btnCerrar2')
+const mdlModal1 = document.querySelector('.WinMessage');
+const mdlModal2 = document.querySelector('.LoseMessage')
 
-const mdlModal1 = document.getElementById('modal1');
-const mdlModal2 = document.getElementById('modal2')
+const btnCerrar = mdlModal1.querySelector('#btnCerrar')
+const btnCerrar2 = mdlModal2.querySelector('#btnCerrar2')
+
 
 let nroGenerado = Math.floor(Math.random() * 20) + 1;
 
@@ -87,9 +89,11 @@ function YouWin() {
     lblScore.textContent = puntaje;
     mdlModal1.show();
     DisableButtons();
+    lblNroGenerado[0].innerHTML = `El número generado era: ${nroGenerado}`
     mdlModal1.style.display = "flex";
     btnCerrar.addEventListener('click', () => {
         mdlModal1.close();
+        mdlModal1.style.display = "none";
     });
 }
 
@@ -100,9 +104,11 @@ function YouLost() {
     puntaje = 20;
     mdlModal2.show();
     DisableButtons();
+    lblNroGenerado[1].innerHTML = `El número generado era: ${nroGenerado}`
     mdlModal2.style.display = "flex";
     btnCerrar2.addEventListener('click', () => {
         mdlModal2.close();
+        mdlModal2.style.display = "none";
     });
     
 }
@@ -145,6 +151,9 @@ function Reboot() {
     puntaje = 20;
     lblScore.textContent = puntaje;
     nroGenerado = Math.floor(Math.random() * 20) + 1;
+    mdlModal1.style.display = "none";
+    mdlModal2.style.display = "none";
+
     EnabledButtons(); 
 }
 
@@ -154,6 +163,4 @@ guess.addEventListener('click', () => {
 
 reboot.addEventListener('click', () => {
     Reboot();
-    mdlModal1.close();
-    mdlModal2.close();
 });

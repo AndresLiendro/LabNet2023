@@ -36,21 +36,23 @@
             <label>Score más alto: 
                 <span id="puntajeAlto"></span>
             </label>
+            
+        </div>
+        <div>
+            <dialog class ="WinMessage" id="modal1">
+                <h2>You WIN!</h2>
+                    <h3 class="nroGenerado"></h3>
+                    <button id="btnCerrar">Cerrar</button>
+            </dialog>
+        
+            <dialog class ="LoseMessage" id="modal2">
+                <h2>You LOST!</h2>
+                <hr>
+                <h3 class="nroGenerado"></h3>
+                <button class="buttons" id="btnCerrar2">Cerrar</button>
+            </dialog>
         </div>
     </div>
-    
-    <dialog id="modal1">
-        <h2>You WIN!</h2>
-            <h3 class="nroGenerado"></h3>
-            <button id="btnCerrar">Cerrar</button>
-    </dialog>
-
-    <dialog id="modal2">
-        <h2>You LOST!</h2>
-            <h3 class="nroGenerado"></h3>
-            <button id="btnCerrar2">Cerrar</button>
-    </dialog>
-    
     <script src="JS/Index.js"></script>
     
 </body>
