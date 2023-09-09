@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labNetPractica3.EF.UI", "labNetPractica3.EF.UI\labNetPractica3.EF.UI.csproj", "{51D63CB1-A589-4D81-8461-49FB4692AE0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labNetPractica6.UI", "labNetPractica3.EF.UI\labNetPractica6.UI.csproj", "{51D63CB1-A589-4D81-8461-49FB4692AE0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labNetPractica3.EF.Logic", "labNetPractica3.EF.Logic\labNetPractica3.EF.Logic.csproj", "{DCBC1019-23F3-4FDE-B971-377B1EC1ED04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labNetPractica6.Logic", "labNetPractica3.EF.Logic\labNetPractica6.Logic.csproj", "{DCBC1019-23F3-4FDE-B971-377B1EC1ED04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labNetPractica3.EF.Entities", "labNetPractica3.EF.Entities\labNetPractica3.EF.Entities.csproj", "{72496066-C318-49D4-B1E3-E199627EEA26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labNetPractica6.Entities", "labNetPractica3.EF.Entities\labNetPractica6.Entities.csproj", "{72496066-C318-49D4-B1E3-E199627EEA26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labNetPractica3.EF.Data", "labNetPractica3.EF.Data\labNetPractica3.EF.Data.csproj", "{7B649C4E-509C-4506-89A1-455360CF7CDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "labNetPractica6.Data", "labNetPractica3.EF.Data\labNetPractica6.Data.csproj", "{7B649C4E-509C-4506-89A1-455360CF7CDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

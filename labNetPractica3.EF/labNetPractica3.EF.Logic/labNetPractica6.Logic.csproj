@@ -61,13 +61,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\labNetPractica3.EF.Data\labNetPractica3.EF.Data.csproj">
+    <ProjectReference Include="..\labNetPractica3.EF.Data\labNetPractica6.Data.csproj">
       <Project>{7B649C4E-509C-4506-89A1-455360CF7CDE}</Project>
-      <Name>labNetPractica3.EF.Data</Name>
+      <Name>labNetPractica6.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\labNetPractica3.EF.Entities\labNetPractica3.EF.Entities.csproj">
+    <ProjectReference Include="..\labNetPractica3.EF.Entities\labNetPractica6.Entities.csproj">
       <Project>{72496066-c318-49d4-b1e3-e199627eea26}</Project>
-      <Name>labNetPractica3.EF.Entities</Name>
+      <Name>labNetPractica6.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
