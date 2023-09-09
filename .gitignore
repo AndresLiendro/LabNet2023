@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/in parentheses indicate the behavior if N is given.
+/kipping...
+/marked with LabNet2023.HelloWorld kipping... labNetPractica1 labNetPractica2 labNetPractica3.EF labNetPractica4.LINQ labNetPractica6 may be preceded by a number, N.
