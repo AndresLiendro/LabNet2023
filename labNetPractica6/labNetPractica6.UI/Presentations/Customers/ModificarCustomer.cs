@@ -48,5 +48,29 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
                 MessageBox.Show("Por favor llene todos los campos");
             }
         }
+
+        private void txtCompanyName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtContactName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtContactTitle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

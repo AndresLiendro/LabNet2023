@@ -83,6 +83,7 @@
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrders.Size = new System.Drawing.Size(800, 389);
             this.dgvOrders.TabIndex = 0;
+            this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             this.dgvOrders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellDoubleClick);
             // 
             // ColumnaNombre

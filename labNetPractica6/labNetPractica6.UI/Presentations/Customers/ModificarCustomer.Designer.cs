@@ -47,6 +47,7 @@
             this.txtContactTitle.Name = "txtContactTitle";
             this.txtContactTitle.Size = new System.Drawing.Size(235, 20);
             this.txtContactTitle.TabIndex = 33;
+            this.txtContactTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContactTitle_KeyPress);
             // 
             // label4
             // 
@@ -94,6 +95,7 @@
             this.txtContactName.Name = "txtContactName";
             this.txtContactName.Size = new System.Drawing.Size(235, 20);
             this.txtContactName.TabIndex = 28;
+            this.txtContactName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContactName_KeyPress);
             // 
             // txtCompanyName
             // 
@@ -101,6 +103,7 @@
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(235, 20);
             this.txtCompanyName.TabIndex = 27;
+            this.txtCompanyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompanyName_KeyPress);
             // 
             // label2
             // 
@@ -144,7 +147,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ModificarCustomer";
-            this.Text = "BajaCustomer";
+            this.Text = "ModificarCustomer";
             ((System.ComponentModel.ISupportInitialize)(this.nudCustomerUpdate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

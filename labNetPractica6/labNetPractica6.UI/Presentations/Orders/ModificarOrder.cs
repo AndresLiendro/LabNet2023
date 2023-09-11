@@ -39,6 +39,7 @@ namespace labNetPractica3.EF.UI.Presentations.Orders
                 };
 
                 orderServicio.Update(OrderUpdate);
+
                 MessageBox.Show("La modificacion se realizo con exito");
                 this.Close();
             }

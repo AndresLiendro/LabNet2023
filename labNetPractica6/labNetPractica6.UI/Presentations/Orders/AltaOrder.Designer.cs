@@ -76,6 +76,7 @@
             this.txtCityShip.Name = "txtCityShip";
             this.txtCityShip.Size = new System.Drawing.Size(235, 20);
             this.txtCityShip.TabIndex = 10;
+            this.txtCityShip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCityShip_KeyPress);
             // 
             // txtNombreShip
             // 
@@ -83,6 +84,7 @@
             this.txtNombreShip.Name = "txtNombreShip";
             this.txtNombreShip.Size = new System.Drawing.Size(235, 20);
             this.txtNombreShip.TabIndex = 9;
+            this.txtNombreShip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreShip_KeyPress);
             // 
             // label2
             // 
@@ -108,6 +110,7 @@
             this.txtRegionShip.Name = "txtRegionShip";
             this.txtRegionShip.Size = new System.Drawing.Size(235, 20);
             this.txtRegionShip.TabIndex = 15;
+            this.txtRegionShip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRegionShip_KeyPress);
             // 
             // label4
             // 

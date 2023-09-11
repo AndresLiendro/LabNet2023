@@ -67,6 +67,7 @@
             this.toolStripBtnAdd.Text = "Agregar";
             this.toolStripBtnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripBtnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripBtnAdd.Click += new System.EventHandler(this.toolStripBtnAdd_Click);
             // 
             // toolStripBtnDel
             // 
@@ -78,6 +79,7 @@
             this.toolStripBtnDel.Text = "Eliminar";
             this.toolStripBtnDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripBtnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripBtnDel.Click += new System.EventHandler(this.toolStripBtnDel_Click);
             // 
             // toolStripSeparator1
             // 
@@ -135,6 +137,8 @@
             this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomers.Size = new System.Drawing.Size(800, 450);
             this.dgvCustomers.TabIndex = 4;
+            this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
+            this.dgvCustomers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellDoubleClick);
             // 
             // CustomersConsulta
             // 

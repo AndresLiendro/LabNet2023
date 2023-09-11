@@ -58,7 +58,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\labNetPractica3.EF.Entities\labNetPractica6.Entities.csproj">
+    <ProjectReference Include="..\labNetPractica6.Entities\labNetPractica6.Entities.csproj">
       <Project>{72496066-C318-49D4-B1E3-E199627EEA26}</Project>
       <Name>labNetPractica6.Entities</Name>
     </ProjectReference>

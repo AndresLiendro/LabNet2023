@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtContactTitle = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtContactName = new System.Windows.Forms.TextBox();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtContactTitle
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 20);
-            this.textBox1.TabIndex = 24;
+            this.txtContactTitle.Location = new System.Drawing.Point(118, 84);
+            this.txtContactTitle.Name = "txtContactTitle";
+            this.txtContactTitle.Size = new System.Drawing.Size(235, 20);
+            this.txtContactTitle.TabIndex = 24;
+            this.txtContactTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContactTitle_KeyPress);
             // 
             // label4
             // 
@@ -84,20 +85,23 @@
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtDescripcion
+            // txtContactName
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(118, 58);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(235, 20);
-            this.txtDescripcion.TabIndex = 19;
+            this.txtContactName.Location = new System.Drawing.Point(118, 58);
+            this.txtContactName.Name = "txtContactName";
+            this.txtContactName.Size = new System.Drawing.Size(235, 20);
+            this.txtContactName.TabIndex = 19;
+            this.txtContactName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContactName_KeyPress);
             // 
-            // txtNombre
+            // txtCompanyName
             // 
-            this.txtNombre.Location = new System.Drawing.Point(118, 32);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(235, 20);
-            this.txtNombre.TabIndex = 18;
+            this.txtCompanyName.Location = new System.Drawing.Point(118, 32);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(235, 20);
+            this.txtCompanyName.TabIndex = 18;
+            this.txtCompanyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompanyName_KeyPress);
             // 
             // label2
             // 
@@ -122,13 +126,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 183);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtContactTitle);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtContactName);
+            this.Controls.Add(this.txtCompanyName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AltaCustomer";
@@ -140,13 +144,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtContactTitle;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtContactName;
+        private System.Windows.Forms.TextBox txtCompanyName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

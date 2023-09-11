@@ -24,49 +24,40 @@ namespace labNetPractica3.EF.Logic.Customer
         }
         public long Insert(CustomerDto dto)
         {
-            using (context)
+            var NewCustomer = new Customers()
             {
-                var NewCustomer = new Customers()
-                {
-                   CompanyName = dto.CompanyName,
-                   ContactName = dto.ContactName,
-                   ContactTitle = dto.ContactTitle,
-                };
+                CompanyName = dto.CompanyName,
+                ContactName = dto.ContactName,
+                ContactTitle = dto.ContactTitle,
+            };
 
-                context.Customers.Add(NewCustomer);
-                context.SaveChanges();
+            context.Customers.Add(NewCustomer);
+            context.SaveChanges();
 
-                return NewCustomer.CustomerID.Length;
-            }
+            return NewCustomer.CustomerID.Length;
         }
 
         public void Update(CustomerDto dto)
         {
-            using (context)
+            var customer = context.Customers.FirstOrDefault(c => c.CustomerID.Equals(dto.Id));
+
+            if (customer != null)
             {
-                var customer = context.Customers.FirstOrDefault(c => c.CustomerID.Equals(dto.Id));
+                customer.CompanyName = dto.CompanyName;
+                customer.ContactName = dto.ContactName;
+                customer.ContactTitle = dto.ContactTitle;
 
-                if (customer != null)
-                {
-                    customer.CompanyName = dto.CompanyName;
-                    customer.ContactName = dto.ContactName;
-                    customer.ContactTitle = dto.ContactTitle;
-
-                    context.SaveChanges();
-                }
+                 context.SaveChanges();
             }
         }
         public void Delete(long ID)
         {
-            using (context) 
-            {
-                var customer = context.Customers.FirstOrDefault(c => c.CustomerID.Equals(ID));
+            var customer = context.Customers.FirstOrDefault(c => c.CustomerID.Equals(ID));
 
-                if (customer != null)
-                {
-                    context.Customers.Remove(customer);
-                    context.SaveChanges();
-                }
+            if (customer != null)
+            {
+                context.Customers.Remove(customer);
+                context.SaveChanges();
             }
         }
     }
