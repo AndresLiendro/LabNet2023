@@ -34,7 +34,7 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
                 {
                     Id = nudCustomerUpdate.ToString(),
                     CompanyName = txtCompanyName.Text,
-                    ContactName = txtCompanyName.Text,
+                    ContactName = txtContactName.Text,
                     ContactTitle = txtContactTitle.Text
                 };
 

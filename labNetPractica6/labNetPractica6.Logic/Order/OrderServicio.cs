@@ -12,23 +12,20 @@ namespace labNetPractica3.EF.Logic.Order
     {
         public IEnumerable<OrderDto> GetAll()
         {
-            using (context)
+            var orders = context.Orders.Select(x => new OrderDto
             {
-                var orders = context.Orders.Select(x => new OrderDto
-                {
-                    Id = x.OrderID,
-                    Ship = x.ShipName,
-                    City = x.ShipCity,
-                    Region = x.ShipRegion,
-                }).ToList();
+                Id = x.OrderID,
+                Ship = x.ShipName,
+                City = x.ShipCity,
+                Region = x.ShipRegion,
+            }).ToList();
 
-                return orders;
-            }
+            return orders;
         }
 
-        public long Insert(OrderDto dto)
+        public bool Insert(OrderDto dto)
         {
-            using (context) 
+            try
             {
                 var NewOrder = new Orders()
                 {
@@ -39,26 +36,18 @@ namespace labNetPractica3.EF.Logic.Order
 
                 context.Orders.Add(NewOrder);
                 context.SaveChanges();
-
-                return NewOrder.OrderID;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 
-        public void Update(OrderDto dto)
+        public bool Update(OrderDto dto)
         {
-            using (context)
+            try
             {
-                //var UpdateOrder = context.Orders.FirstOrDefault(x => x.OrderID == dto.Id);
-
-                //if (UpdateOrder == null)
-                //    throw new Exception("La Orden no existe");
-
-                //UpdateOrder.ShipName = dto.Ship;
-                //UpdateOrder.ShipCity = dto.City;
-                //UpdateOrder.ShipRegion = dto.Region;
-
-                //context.SaveChanges();
-
                 var UpdateOrder = context.Orders.FirstOrDefault(o => o.OrderID == dto.Id);
 
                 if (UpdateOrder != null)
@@ -68,26 +57,34 @@ namespace labNetPractica3.EF.Logic.Order
                     UpdateOrder.ShipRegion = dto.Region;
 
                     context.SaveChanges();
+                    return true;
                 }
+
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
-        public void Delete(long ID)
+        public bool Delete(long ID)
         {
-            using (context)
+            try
             {
-                //var DeleteOrder = context.Orders.FirstOrDefault(x => x.OrderID == ID);
-
-                //context.Orders.Remove(DeleteOrder);
-
-                //context.SaveChanges();
-
                 var DeleteOrder = context.Orders.FirstOrDefault(o => o.OrderID == ID);
 
                 if (DeleteOrder != null)
                 {
                     context.Orders.Remove(DeleteOrder);
                     context.SaveChanges();
+                    return true;
                 }
+
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

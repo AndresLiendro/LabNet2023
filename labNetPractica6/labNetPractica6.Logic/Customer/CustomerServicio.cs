@@ -13,51 +13,75 @@ namespace labNetPractica3.EF.Logic.Customer
         public IEnumerable<CustomerDto> GetAll()
         {
             var costumer = context.Customers
-                   .Select(x => new CustomerDto
-                    {
-                       Id = x.CustomerID,
-                       CompanyName = x.CompanyName,
-                       ContactName = x.ContactName,
-                       ContactTitle = x.ContactTitle,
-                    }).ToList();
+                .Select(x => new CustomerDto
+                {
+                    Id = x.CustomerID,
+                    CompanyName = x.CompanyName,
+                    ContactName = x.ContactName,
+                    ContactTitle = x.ContactTitle,
+                }).ToList();
             return costumer;
         }
-        public long Insert(CustomerDto dto)
+        public bool Insert(CustomerDto dto)
         {
-            var NewCustomer = new Customers()
+            try
             {
-                CompanyName = dto.CompanyName,
-                ContactName = dto.ContactName,
-                ContactTitle = dto.ContactTitle,
-            };
+                var NewCustomer = new Customers()
+                {
+                    CompanyName = dto.CompanyName,
+                    ContactName = dto.ContactName,
+                    ContactTitle = dto.ContactTitle,
+                };
 
-            context.Customers.Add(NewCustomer);
-            context.SaveChanges();
-
-            return NewCustomer.CustomerID.Length;
-        }
-
-        public void Update(CustomerDto dto)
-        {
-            var customer = context.Customers.FirstOrDefault(c => c.CustomerID.Equals(dto.Id));
-
-            if (customer != null)
+                context.Customers.Add(NewCustomer);
+                context.SaveChanges();
+                return true;
+            }
+            catch
             {
-                customer.CompanyName = dto.CompanyName;
-                customer.ContactName = dto.ContactName;
-                customer.ContactTitle = dto.ContactTitle;
-
-                 context.SaveChanges();
+                return false;
             }
         }
-        public void Delete(long ID)
-        {
-            var customer = context.Customers.FirstOrDefault(c => c.CustomerID.Equals(ID));
 
-            if (customer != null)
+        public bool Update(CustomerDto dto)
+        {
+            try
             {
-                context.Customers.Remove(customer);
-                context.SaveChanges();
+                var customer = context.Customers.FirstOrDefault(c => c.CustomerID.Equals(dto.Id));
+
+                if (customer != null)
+                {
+                    customer.CompanyName = dto.CompanyName;
+                    customer.ContactName = dto.ContactName;
+                    customer.ContactTitle = dto.ContactTitle;
+
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool Delete(long ID)
+        {
+            try
+            {
+                var customer = context.Customers.FirstOrDefault(c => c.CustomerID.Equals(ID));
+
+                if (customer != null)
+                {
+                    context.Customers.Remove(customer);
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

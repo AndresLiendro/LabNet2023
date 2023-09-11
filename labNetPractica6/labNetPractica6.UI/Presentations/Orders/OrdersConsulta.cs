@@ -14,9 +14,9 @@ namespace labNetPractica3.EF.UI.Presentations.Orders
 {
     public partial class OrdersConsulta : Form
     {
-        private OrderServicio ordersServicio = new OrderServicio();
         private int SelectEntity = 0;
         private string EntityName;
+        private OrderServicio ordersServicio = new OrderServicio();
         public OrdersConsulta()
         {
             InitializeComponent();
@@ -68,17 +68,26 @@ namespace labNetPractica3.EF.UI.Presentations.Orders
 
         private void dgvOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var idSeleccionado = int.Parse(dgvOrders.Rows[e.RowIndex].Cells[0].Value.ToString());
-            var shipSeleccionado = dgvOrders.Rows[e.RowIndex].Cells[1].Value.ToString();
-            var citySeleccionado = dgvOrders.Rows[e.RowIndex].Cells[2].Value.ToString();
-            var regionSeleccionado = dgvOrders.Rows[e.RowIndex].Cells[3].Value.ToString();
+            //if (e.RowIndex >= 0 && e.RowIndex < dgvOrders.Rows.Count)
+            //{
+            //    var idCell = dgvOrders.Rows[e.RowIndex].Cells[0];
 
-            var fOrderUpdate = new ModificarOrder(idSeleccionado, shipSeleccionado, citySeleccionado, regionSeleccionado);
+            //    if (idCell.Value != null)
+            //    {
+            //var idSeleccionado = int.Parse(idCell.Value.ToString());
+            var idSeleccionado = int.Parse(dgvOrders.Rows[e.RowIndex].Cells["ID"].Value.ToString());
+            var shipSeleccionado = dgvOrders.Rows[e.RowIndex].Cells["Ship"].Value.ToString();
+                    var citySeleccionado = dgvOrders.Rows[e.RowIndex].Cells["City"].Value.ToString();
+                    var regionSeleccionado = dgvOrders.Rows[e.RowIndex].Cells["Region"].Value.ToString();
 
-            fOrderUpdate.ShowDialog();
-            DataUpdate();
-            SelectEntity = 0;
-            dgvOrders.CurrentCell = null;
+                    var fOrderUpdate = new ModificarOrder(idSeleccionado, shipSeleccionado, citySeleccionado, regionSeleccionado);
+
+                    fOrderUpdate.ShowDialog();
+                    DataUpdate();
+                //}
+                    SelectEntity = 0;
+                    dgvOrders.CurrentCell = null;
+            //}
         }
 
         private void DataUpdate()

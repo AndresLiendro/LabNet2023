@@ -7,9 +7,10 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
 {
     public partial class CustomersConsulta : Form
     {
-        private CustomerServicio customersServicio = new CustomerServicio();
         private int EntidadId = 0;
         private string EntidadNombnre;
+        private bool Flag = false;
+        private CustomerServicio customersServicio = new CustomerServicio();
         public CustomersConsulta()
         {
             InitializeComponent();
@@ -29,20 +30,6 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
             
         }
 
-
-        private void dgvCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var idSeleccionado = int.Parse(dgvCustomers.Rows[e.RowIndex].Cells[0].Value.ToString());
-            var companyNameSeleccionado = dgvCustomers.Rows[e.RowIndex].Cells[1].Value.ToString();
-            var contactNameSeleccionado = dgvCustomers.Rows[e.RowIndex].Cells[2].Value.ToString();
-            var contactTitleSeleccionado = dgvCustomers.Rows[e.RowIndex].Cells[3].Value.ToString();
-            var fModificarCustomer = new ModificarCustomer(idSeleccionado, companyNameSeleccionado, contactNameSeleccionado, contactTitleSeleccionado);
-
-            fModificarCustomer.ShowDialog();
-            DataUpdate();
-            EntidadId = 0;
-            dgvCustomers.CurrentCell = null;
-        }
         private void DataUpdate()
         {
             dgvCustomers.DataSource = customersServicio.GetAll();
@@ -84,19 +71,42 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
 
         private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex >= 0 && dgvCustomers.Columns.Contains("ID"))
             {
-                int idSelec = Convert.ToInt32(dgvCustomers.Rows[e.RowIndex].Cells["ID"].Value);
-                var companyName = dgvCustomers.Rows[e.RowIndex].Cells["Company Name"].Value.ToString();
+                var cellValue = dgvCustomers.Rows[e.RowIndex].Cells["ID"].Value;
 
-                this.EntidadId = idSelec;
-                this.EntidadNombnre = companyName;
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int idSelec))
+                {
+                    var companyName = dgvCustomers.Rows[e.RowIndex].Cells["Company Name"].Value.ToString();
+
+                    this.EntidadId = idSelec;
+                    this.EntidadNombnre = companyName;
+                    this.Flag = true;
+                }
+                else { Flag = false; }
             }
-            catch (Exception)
+        }
+        private void dgvCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (Flag)
             {
+                var companyNameSeleccionado = dgvCustomers.Rows[e.RowIndex].Cells["Company Name"].Value.ToString();
+                var contactNameSeleccionado = dgvCustomers.Rows[e.RowIndex].Cells["Contact Name"].Value.ToString();
+                var contactTitleSeleccionado = dgvCustomers.Rows[e.RowIndex].Cells["Contact Title"].Value.ToString();
 
-                MessageBox.Show("Seleccione una celda que contenga un registro");
+                var fModificarCustomer = new ModificarCustomer(EntidadId, companyNameSeleccionado, contactNameSeleccionado, contactTitleSeleccionado);
+
+                fModificarCustomer.ShowDialog();
+                DataUpdate();
+                EntidadId = 0;
+
                 dgvCustomers.CurrentCell = null;
+                Flag = false;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un registro para poder modificarlo");
             }
         }
     }
