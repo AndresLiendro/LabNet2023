@@ -1,0 +1,37 @@
+﻿@model List<labNetPractica3.EF.Logic.Customer.CustomerDto>
+
+@{
+    ViewBag.Title = "Customer Page";
+}
+
+<h1>Tabla de Clientes</h1>
+
+@*<table class="table-responsive">
+    <tr>
+        <td>ID Customer</td>
+        <td>Company Name</td>
+        <td>Contact Name</td>
+        <td>Contact Title</td>
+    </tr>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Company Name</th> 
+            <th scope="col">Contact</th>
+            <th scope="col">Title</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <th scope="row">@customer.Id</th>
+                <td>@customer.CompanyName</td>
+                <td>@customer.ContactName</td>
+                <td>@customer.ContactTitle</td>
+            </tr>
+        }
+    </tbody>
+</table>
