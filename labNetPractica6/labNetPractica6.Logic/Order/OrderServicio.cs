@@ -10,9 +10,10 @@ namespace labNetPractica3.EF.Logic.Order
 {
     public class OrderServicio : BasicLogic, ILogic<OrderDto>
     {
-        public IEnumerable<OrderDto> GetAll()
+        public List<OrderDto> GetAll()
         {
-            var orders = context.Orders.Select(x => new OrderDto
+            IEnumerable<Orders> orders = context.Orders.AsEnumerable();
+            List<OrderDto> result = orders.Select(x => new OrderDto
             {
                 Id = x.OrderID,
                 Ship = x.ShipName,
@@ -20,72 +21,50 @@ namespace labNetPractica3.EF.Logic.Order
                 Region = x.ShipRegion,
             }).ToList();
 
-            return orders;
+            return result;
         }
 
         public bool Insert(OrderDto dto)
         {
-            try
+            var NewOrder = new Orders()
             {
-                var NewOrder = new Orders()
-                {
-                    ShipName = dto.Ship,
-                    ShipCity = dto.City,
-                    ShipRegion = dto.Region,
-                };
+                ShipName = dto.Ship,
+                ShipCity = dto.City,
+                ShipRegion = dto.Region,
+            };
 
                 context.Orders.Add(NewOrder);
-                context.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+                return context.SaveChanges() > 0;
         }
 
         public bool Update(OrderDto dto)
         {
-            try
+            bool result = false;
+            Orders orderU = context.Orders.FirstOrDefault(o => o.OrderID.Equals(dto.Id));
+
+            if (orderU != null)
             {
-                var UpdateOrder = context.Orders.FirstOrDefault(o => o.OrderID == dto.Id);
+                orderU.ShipName = dto.Ship;
+                orderU.ShipCity = dto.City;
+                orderU.ShipRegion = dto.Region;
 
-                if (UpdateOrder != null)
-                {
-                    UpdateOrder.ShipName = dto.Ship;
-                    UpdateOrder.ShipCity = dto.City;
-                    UpdateOrder.ShipRegion = dto.Region;
-
-                    context.SaveChanges();
-                    return true;
-                }
-
-                return false;
+                result  = context.SaveChanges() > 0;
             }
-            catch (Exception)
-            {
-                return false;
-            }
+
+            return result;
         }
-        public bool Delete(long ID)
+        public bool Delete(int ID)
         {
-            try
-            {
-                var DeleteOrder = context.Orders.FirstOrDefault(o => o.OrderID == ID);
+            bool result = false;
+            Orders orderD = context.Orders.FirstOrDefault(o => o.OrderID.Equals(ID));
 
-                if (DeleteOrder != null)
-                {
-                    context.Orders.Remove(DeleteOrder);
-                    context.SaveChanges();
-                    return true;
-                }
-
-                return false;
-            }
-            catch (Exception)
+            if (orderD != null)
             {
-                return false;
+                context.Orders.Remove(orderD);
+                result = context.SaveChanges() > 0;
             }
+
+            return result;
         }
     }
 }
