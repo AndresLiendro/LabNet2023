@@ -27,7 +27,7 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
             fNuevoCustomer.ShowDialog();
             DataUpdate();
             dgvCustomers.CurrentCell = null;
-            
+
         }
 
         private void DataUpdate()
@@ -71,31 +71,29 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
 
         private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dgvCustomers.Columns.Contains("ID"))
+            var cellValue = dgvCustomers.Rows[e.RowIndex].Cells["ID"].Value;
+
+            if (cellValue != null && int.TryParse(cellValue.ToString(), out int idSelec))
             {
-                var cellValue = dgvCustomers.Rows[e.RowIndex].Cells["ID"].Value;
+                var companyName = dgvCustomers.Rows[e.RowIndex].Cells["Company Name"].Value.ToString();
 
-                if (cellValue != null && int.TryParse(cellValue.ToString(), out int idSelec))
-                {
-                    var companyName = dgvCustomers.Rows[e.RowIndex].Cells["Company Name"].Value.ToString();
-
-                    this.EntidadId = idSelec;
-                    this.EntidadNombnre = companyName;
-                    this.Flag = true;
-                }
-                else { Flag = false; }
+                this.EntidadId = idSelec;
+                this.EntidadNombnre = companyName;
+                this.Flag = true;
             }
+            else { Flag = false; }
         }
         private void dgvCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if (Flag)
+            var cellValue = dgvCustomers.Rows[e.RowIndex].Cells["ID"].Value;
+
+            if ((cellValue != null) && int.TryParse(cellValue.ToString(), out int idSelec))
             {
                 var companyNameSeleccionado = dgvCustomers.Rows[e.RowIndex].Cells["Company Name"].Value.ToString();
                 var contactNameSeleccionado = dgvCustomers.Rows[e.RowIndex].Cells["Contact Name"].Value.ToString();
                 var contactTitleSeleccionado = dgvCustomers.Rows[e.RowIndex].Cells["Contact Title"].Value.ToString();
 
-                var fModificarCustomer = new ModificarCustomer(EntidadId, companyNameSeleccionado, contactNameSeleccionado, contactTitleSeleccionado);
+                var fModificarCustomer = new ModificarCustomer(idSelec, companyNameSeleccionado, contactNameSeleccionado, contactTitleSeleccionado);
 
                 fModificarCustomer.ShowDialog();
                 DataUpdate();
