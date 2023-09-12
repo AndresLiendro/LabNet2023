@@ -5,17 +5,17 @@
 }
 
 <h1>Tabla de Ordenes</h1>
-
+<br />
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">ID</th>
+            <th scope="col">#</th>
             <th scope="col">Ship</th>
             <th scope="col">City</th>
             <th scope="col">Region</th>
+            <th scope="col">Opciones</th>
         </tr>
     </thead>
-
     <tbody>
         @foreach (var order in Model)
         {
@@ -24,6 +24,16 @@
                 <td>@order.Ship</td>
                 <td>@order.City</td>
                 <td>@order.Region</td>
+                <td>
+                    @Html.ActionLink("Agregar", "Insert", new { id = order.Id }, new { @class = "btn btn-success" })
+                </td>
+                <td>
+                    @Html.ActionLink("Modificar", "Update", new {id = order.Id}, new {@class = "btn btn-info"})
+                </td>
+                <td>
+                    @Html.ActionLink("Eliminar", "Delete", new { id = order.Id }, new { @class = "btn btn-danger", 
+                        onclick = "return confirm('¿Está seguro que desea eliminar esta orden?')" }))
+                </td>
             </tr>
         }
     </tbody>

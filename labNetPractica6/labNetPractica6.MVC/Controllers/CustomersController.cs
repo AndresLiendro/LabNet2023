@@ -1,9 +1,11 @@
 ﻿using labNetPractica3.EF.Entities;
 using labNetPractica3.EF.Logic.Customer;
+using labNetPractica3.EF.Logic.Order;
 using labNetPractica6.MVC.Models;
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -81,5 +83,20 @@ namespace labNetPractica6.MVC.Controllers
 
             return View("InsertUpdate");
         }
+
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                customerServicio.Delete(id);
+                return RedirectToAction("Index");
+            }
+            catch (DbUpdateException)
+            {
+
+                return RedirectToAction("SinPermisos", "Error");
+            }
+        }
     }
+}
 }

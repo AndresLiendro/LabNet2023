@@ -66,5 +66,10 @@ namespace labNetPractica3.EF.Logic.Order
 
             return result;
         }
+
+        public Orders GetById(int id)
+        {
+            return context.Orders.FirstOrDefault(e => e.OrderID.Equals(id));
+        }
     }
 }

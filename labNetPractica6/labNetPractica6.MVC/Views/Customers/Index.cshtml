@@ -26,25 +26,14 @@
                 <td>@customer.contactName</td>
                 <td>@customer.contactTitle</td>
                 <td>
-                    <button type="button"
-                            class="btn btn-success"
-                            onclick="insertCustomer(@customer.Id)">
-                        Agregar
-                    </button>
+                    @Html.ActionLink("Agregar", "Insert", new { id = customer.Id }, new { @class = "btn btn-success" })
                 </td>
                 <td>
-                    <button type="button"
-                            class="btn btn-info"
-                            onclick="updateCustomer(@customer.Id)">
-                        Modificar
-                    </button>
+                    @Html.ActionLink("Modificar", "Update", new { id = customer.Id }, new { @class = "btn btn-info" })
                 </td>
                 <td>
-                    <button type="button"
-                            class="btn btn-danger"
-                            onclick="deleteCustomer(@customer.Id)">
-                        Eliminar
-                    </button>
+                    @Html.ActionLink("Eliminar", "Delete", new { id = customer.Id }, new { @class = "btn btn-danger",
+                        onclick = "return confirm('¿Está seguro que desea eliminar este cliente?')" }))
                 </td>
             </tr>
         }
