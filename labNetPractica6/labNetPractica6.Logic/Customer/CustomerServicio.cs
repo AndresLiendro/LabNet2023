@@ -70,7 +70,7 @@ namespace labNetPractica3.EF.Logic.Customer
 
         public Customers GetById(int id)
         {
-            return context.Customers.FirstOrDefault(e => e.CustomerID == id.ToString());
+            return context.Customers.FirstOrDefault(e => e.CustomerID.Trim().Equals(id));
         }
     }
 }

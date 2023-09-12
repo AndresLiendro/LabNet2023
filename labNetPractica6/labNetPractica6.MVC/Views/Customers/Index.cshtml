@@ -29,7 +29,7 @@
                     @Html.ActionLink("Agregar", "Insert", new { id = customer.Id }, new { @class = "btn btn-success" })
                 </td>
                 <td>
-                    @Html.ActionLink("Modificar", "Update", new { id = customer.Id.Trim() }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Modificar", "Update", new { id = customer.Id }, new { @class = "btn btn-info" })
                 </td>
                 <td>
                     @Html.ActionLink("Eliminar", "Delete", new { id = customer.Id }, new { @class = "btn btn-danger",
@@ -39,24 +39,3 @@
         }
     </tbody>
 </table>
-
-@*@section Scripts {
-    <script type="text/javascript" charset="utf-8">
-        $(document).ready( funciton ( ) {
-            console.log("hola mundo del gallinero");
-        });
-
-        function deleteCustomer(idCustomer) {
-            Swal.fire({
-                title: '¿Está seguro?',
-                text: "No podrás revertir esta operación!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'Cancelar',
-                confirmButtonText: 'Si, Eliminar!',
-            }).then((result) => {
-        }
-    </script>
-}*@
