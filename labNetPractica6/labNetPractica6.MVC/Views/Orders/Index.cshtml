@@ -26,10 +26,10 @@
                 <td>@order.city</td>
                 <td>@order.region</td>
                 <td>
-                    @Html.ActionLink("Agregar", "InsertUpdate", new { id = order.Id }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Agregar", "Insert", new { id = order.Id }, new { @class = "btn btn-success" })
                 </td>
                 <td>
-                    @Html.ActionLink("Modificar", "InsertUpdate", new {id = order.Id}, new {@class = "btn btn-info"})
+                    @Html.ActionLink("Modificar", "Update", new {id = order.Id}, new {@class = "btn btn-info"})
                 </td>
                 <td>
                     @Html.ActionLink("Eliminar", "Delete", new { id = order.Id }, new { @class = "btn btn-danger", 

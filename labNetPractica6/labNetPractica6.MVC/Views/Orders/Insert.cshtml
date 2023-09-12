@@ -3,10 +3,8 @@
     ViewBag.Title = "Insert Order";
 }
 
-@using (Html.BeginForm("InsertUpdate", "Orders", FormMethod.Post))
+@using (Html.BeginForm("Insert", "Orders", FormMethod.Post))
 {
-    @Html.HiddenFor(o => o.Id);
-
     <label>Ship Name:</label>
     @Html.TextBoxFor(o => o.ship)
     @Html.ValidationMessageFor(o => o.ship, "", new { @class = "text-danger" })

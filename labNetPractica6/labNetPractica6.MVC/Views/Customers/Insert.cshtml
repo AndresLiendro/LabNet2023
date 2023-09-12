@@ -1,0 +1,24 @@
+﻿@model labNetPractica6.MVC.Models.CustomersView
+@{
+    ViewBag.Title = "Insert Customer";
+}
+
+@using (Html.BeginForm("Insert", "Customers", FormMethod.Post))
+{
+    @Html.HiddenFor(c => c.Id);
+
+    <label>Company Name:</label>
+    @Html.TextBoxFor(c => c.companyName)
+    @Html.ValidationMessageFor(c => c.companyName, "", new { @class = "text-danger" })
+    <br />
+    <label>Contact Name:</label>
+    @Html.TextBoxFor(c => c.contactName)
+    @Html.ValidationMessageFor(c => c.contactName, "", new { @class = "text-danger" })
+    <br />
+    <label>Contact Title:</label>
+    @Html.TextBoxFor(c => c.contactTitle)
+    @Html.ValidationMessageFor(c => c.contactTitle, "", new { @class = "text-danger" })
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Guardar" />
+}

@@ -1,9 +1,9 @@
 ﻿@model labNetPractica6.MVC.Models.CustomersView
 @{
-    ViewBag.Title = "Insert Customer";
+    ViewBag.Title = "Update Customer";
 }
 
-@using (Html.BeginForm("InsertUpdate", "Customers", FormMethod.Post))
+@using (Html.BeginForm("Update", "Customers", FormMethod.Post))
 {
     @Html.HiddenFor(c => c.Id);
 

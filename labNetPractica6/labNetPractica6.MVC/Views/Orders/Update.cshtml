@@ -1,0 +1,24 @@
+﻿@model labNetPractica6.MVC.Models.OrdersView
+@{
+    ViewBag.Title = "Update Order";
+}
+
+@using (Html.BeginForm("Update", "Orders", FormMethod.Post))
+{
+    @Html.HiddenFor(o => o.Id);
+
+    <label>Ship Name:</label>
+    @Html.TextBoxFor(o => o.ship)
+    @Html.ValidationMessageFor(o => o.ship, "", new { @class = "text-danger" })
+    <br />
+    <label>City Name:</label>
+    @Html.TextBoxFor(o => o.city)
+    @Html.ValidationMessageFor(o => o.city, "", new { @class = "text-danger" })
+    <br />
+    <label>Region:</label>
+    @Html.TextBoxFor(o => o.region)
+    @Html.ValidationMessageFor(o => o.region, "", new { @class = "text-danger" })
+    <br />
+
+    <input type="submit" class="btn btn-info" value="Actualizar" />
+}

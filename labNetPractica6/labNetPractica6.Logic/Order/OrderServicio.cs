@@ -40,7 +40,7 @@ namespace labNetPractica3.EF.Logic.Order
         public bool Update(OrderDto dto)
         {
             bool result = false;
-            Orders orderU = context.Orders.FirstOrDefault(o => o.OrderID.Equals(dto.Id));
+            Orders orderU = context.Orders.FirstOrDefault(o => o.OrderID == (dto.Id));
 
             if (orderU != null)
             {

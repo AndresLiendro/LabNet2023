@@ -29,57 +29,59 @@ namespace labNetPractica6.MVC.Controllers
             return View(ordersV);
         }
 
-        public ActionResult InsertUpdate(int? id)
+        public ActionResult Insert()
         {
-            if (id == null)
-            {
-                return View("InsertUpdate", new OrdersView());
-            }
-            else
-            {
-                var orderObtenido = orderServicio.GetById(id.Value);
-                ordersView.Id = orderObtenido.OrderID;
-                ordersView.ship = orderObtenido.ShipName;
-                ordersView.city = orderObtenido.ShipCity;
-                ordersView.region = orderObtenido.ShipRegion;
+            return View("Insert", new OrdersView());
+        }
 
-                return View("InsertUpdate", ordersView);
-            }
+        public ActionResult Update(int id)
+        {
+            var orderObtenido = orderServicio.GetById(id);
+            ordersView.Id = orderObtenido.OrderID;
+            ordersView.ship = orderObtenido.ShipName;
+            ordersView.city = orderObtenido.ShipCity;
+            ordersView.region = orderObtenido.ShipRegion;
+
+            return View("Update", ordersView);
         }
 
         [HttpPost]
-        public ActionResult InsertUpdate(OrdersView model)
+        public ActionResult Insert(OrdersView model)
         {
             if (ModelState.IsValid)
             {
-                if (model.Id == 0)
+                var nuevaOrder = new OrderDto
                 {
-                    var nuevaOrder = (new OrderDto
-                    {
-                        Ship = model.ship,
-                        City = model.city,
-                        Region = model.region,
-                    });
+                    Ship = model.ship,
+                    City = model.city,
+                    Region = model.region,
+                };
 
-                    orderServicio.Insert(nuevaOrder);
-                    return RedirectToAction("Index");
-                }
-                else
+                orderServicio.Insert(nuevaOrder);
+                return RedirectToAction("Index");
+            }
+            return View("Insert");
+             
+        }
+
+        [HttpPost]
+        public ActionResult Update(OrdersView model)
+        {
+            if (ModelState.IsValid)
+            {
+                var modificarOrder = new OrderDto
                 {
-                    var modificarOrder = new OrderDto
-                    {
-                        Id = model.Id,
-                        Ship = model.ship,
-                        City = model.city,
-                        Region = model.region,
-                    };
+                    Id = model.Id,
+                    Ship = model.ship,
+                    City = model.city,
+                    Region = model.region,
+                };
 
-                    orderServicio.Update(modificarOrder);
-                    return RedirectToAction("Index");
-                }
+                orderServicio.Update(modificarOrder);
+                return RedirectToAction("Index");
             }
 
-            return View("InsertUpdate");
+            return View("Update");
         }
 
         public ActionResult Delete(int id)

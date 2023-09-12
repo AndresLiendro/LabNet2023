@@ -31,58 +31,61 @@ namespace labNetPractica6.MVC.Controllers
             return View(customerV);
         }
 
-        public ActionResult InsertUpdate(int? id)
+        public ActionResult Insert()
         {
-            if (id == null)
-            {
-                return View("InsertUpdate", new CustomersView());  
-            }
-            else
-            {
-                var customerObtenido = customerServicio.GetById(id.Value);
-                customersView.Id = customerObtenido.CustomerID;
-                customersView.companyName = customerObtenido.CompanyName;
-                customersView.contactName = customerObtenido.ContactName;
-                customersView.contactTitle = customerObtenido.ContactTitle;
+            return View("Insert", new CustomersView());
+        }
 
-                return View("InsertUpdate", customersView);
+        public ActionResult Update(int id)
+        {
+            var customerObtenido = customerServicio.GetById(id);
+            customersView.Id = customerObtenido.CustomerID;
+            customersView.companyName = customerObtenido.CompanyName;
+            customersView.contactName = customerObtenido.ContactName;
+            customersView.contactTitle = customerObtenido.ContactTitle;
 
-            }
+            return View("Update", customersView);
         }
 
         [HttpPost]
-        public ActionResult InsertUpdate(CustomersView model)
+        public ActionResult Insert(CustomersView model)
         {
             if (ModelState.IsValid)
             {
-                if (int.TryParse(model.Id, out int idValue) && idValue == 0)
+                var nuevoCustomer = new CustomerDto
                 {
-                    var nuevoCustomer = (new CustomerDto
-                    {
-                        CompanyName = model.companyName,
-                        ContactName = model.contactName,
-                        ContactTitle = model.contactTitle,
-                    });
+                    CompanyName = model.companyName,
+                    ContactName = model.contactName,
+                    ContactTitle = model.contactTitle,
+                };
 
-                    customerServicio.Insert(nuevoCustomer);
-                    return RedirectToAction("Index");
-                }
-                else {
-                    var modificarCustomer = new CustomerDto
-                    {
-                        Id = model.Id,
-                        CompanyName = model.companyName,
-                        ContactName = model.contactName,
-                        ContactTitle = model.contactTitle,
-                    };
-
-                    customerServicio.Update(modificarCustomer);
-                    return RedirectToAction("Index");
-                }
+                customerServicio.Insert(nuevoCustomer);
+                return RedirectToAction("Index");
             }
 
-            return View("InsertUpdate");
+            return View("Insert");
         }
+
+        [HttpPost]
+        public ActionResult Update(CustomersView model)
+        {
+            if (ModelState.IsValid)
+            {
+                var customerMod = new CustomerDto
+                {
+                    Id = model.Id,
+                    CompanyName = model.companyName,
+                    ContactName = model.contactName,
+                    ContactTitle = model.contactTitle,
+                };
+
+                customerServicio.Update(customerMod);
+                return RedirectToAction("Index");
+            }
+
+            return View("Update");
+        }
+            
 
         public ActionResult Delete(int id)
         {
