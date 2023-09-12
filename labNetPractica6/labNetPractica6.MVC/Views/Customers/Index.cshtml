@@ -29,7 +29,7 @@
                     @Html.ActionLink("Agregar", "Insert", new { id = customer.Id }, new { @class = "btn btn-success" })
                 </td>
                 <td>
-                    @Html.ActionLink("Modificar", "Update", new { id = customer.Id }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Modificar", "Update", new { id = customer.Id.Trim() }, new { @class = "btn btn-info" })
                 </td>
                 <td>
                     @Html.ActionLink("Eliminar", "Delete", new { id = customer.Id }, new { @class = "btn btn-danger",
