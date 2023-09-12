@@ -82,7 +82,7 @@ namespace labNetPractica6.MVC.Controllers
             return View("InsertUpdate");
         }
 
-        public ActionResult Delete(decimal id)
+        public ActionResult Delete(int id)
         {
             try
             {
