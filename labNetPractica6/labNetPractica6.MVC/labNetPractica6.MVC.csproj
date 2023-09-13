@@ -130,16 +130,11 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\RandMController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomersView.cs" />
-    <Compile Include="Models\MortyView.cs" />
     <Compile Include="Models\OrdersView.cs" />
-    <Compile Include="Models\ResponseMorty.cs" />
-    <Compile Include="Models\ResponseRick.cs" />
-    <Compile Include="Models\RickView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
