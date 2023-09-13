@@ -1,0 +1,86 @@
+﻿@model  List<labNetPractica6.MVC.Models.CharacterView>
+@{
+    ViewBag.Title = "Personajes de Rick & Morty";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        body {
+            background: black;
+        }
+
+        .status-alive {
+            color: green;
+        }
+
+        .status-dead {
+            color: red;
+        }
+
+        .status-desconocido {
+            color: gray;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            background-color: #fff;
+            width: 200px;
+        }
+
+        .image-container {
+            margin-bottom: 10px;
+        }
+
+            .image-container img {
+                max-width: 100%;
+            }
+
+        .card-content h2 {
+            font-size: 1.2em;
+        }
+
+        .card-content h4 {
+            font-size: 1em;
+        }
+    </style>
+    <title></title>
+</head>
+
+<body>
+
+    <div class="card-grid">
+        @{ 
+            var characters = Model.OrderBy(c => Guid.NewGuid()).ToList();
+            foreach (var personaje in characters)
+            {
+                <div class="card">
+                    <div class="image-container">
+                        <img src="@personaje.image" />
+                    </div>
+                    <div class="card-content">
+                        <h2>@personaje.name</h2>
+                        <h4>Ubicacion: @personaje.location.name</h4>
+                        <span class="@(personaje.status == "Alive" ? "status-alive" : personaje.status == "Dead" ?
+                            "status-dead" : "status-desconocido")">@personaje.status</span>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+</body>
+</html>

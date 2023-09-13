@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CharactersController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -133,6 +134,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CharacterResponse.cs" />
+    <Compile Include="Models\CharacterView.cs" />
     <Compile Include="Models\CustomersView.cs" />
     <Compile Include="Models\OrdersView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,6 +199,7 @@
     <Content Include="Views\Error\SinPermisos.cshtml" />
     <Content Include="Views\Orders\Update.cshtml" />
     <Content Include="Views\Customers\Update.cshtml" />
+    <Content Include="Views\Characters\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
