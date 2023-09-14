@@ -52,6 +52,8 @@ namespace labNetPracica7.API.Controllers
                     oDto.Region = orderView.Region;
 
                     oServicio.Insert(oDto);
+
+                    // id devuelve 0 por ser Insert, en BD figura con el Id correspondiente
                     return CreatedAtRoute("DefaultApi", new { id = orderView }, orderView);
                 }
                 else
