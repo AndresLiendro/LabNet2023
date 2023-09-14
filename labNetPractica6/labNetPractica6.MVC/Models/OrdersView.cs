@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace labNetPractica6.MVC.Models
 {
@@ -13,16 +9,16 @@ namespace labNetPractica6.MVC.Models
         [Required]
         [StringLength(10)]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
-        public string ship { get; set; }
+        public string Ship { get; set; }
 
         [Required]
         [StringLength(10)]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
-        public string city { get; set; }
+        public string City { get; set; }
 
         [Required]
         [StringLength(10)]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
-        public string region { get; set; }
+        public string Region { get; set; }
     }
 }

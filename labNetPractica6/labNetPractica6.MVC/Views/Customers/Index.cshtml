@@ -22,9 +22,9 @@
         {
             <tr>
                 <th scope="row">@customer.Id</th>
-                <td>@customer.companyName</td>
-                <td>@customer.contactName</td>
-                <td>@customer.contactTitle</td>
+                <td>@customer.CompanyName</td>
+                <td>@customer.ContactName</td>
+                <td>@customer.ContactTitle</td>
                 <td>
                     @Html.ActionLink("Agregar", "Insert", new { id = customer.Id }, new { @class = "btn btn-success" })
                 </td>

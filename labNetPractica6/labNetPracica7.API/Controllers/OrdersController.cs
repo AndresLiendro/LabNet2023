@@ -1,7 +1,7 @@
 ﻿using labNetPracica7.API.Models;
+using labNetPractica3.EF.Entities;
 using labNetPractica3.EF.Logic.Order;
 using System.Web.Http;
-using System.Web.Mvc;
 
 namespace labNetPracica7.API.Controllers
 {
@@ -23,17 +23,17 @@ namespace labNetPracica7.API.Controllers
             }
         }
 
-        public IHttpActionResult GetById(int id)
+        public IHttpActionResult Get(int id)
         {
             try
             {
-                var order = oServicio.GetById(id);
-                oDto.Id = order.OrderID;
-                oDto.Ship = order.ShipName;
-                oDto.City = order.ShipCity; 
-                oDto.Region = order.ShipRegion;
+                Orders orders = oServicio.GetById(id);
+                oView.Id = orders.OrderID;
+                oView.Ship = orders.ShipName;
+                oView.City = orders.ShipCity;
+                oView.Region = orders.ShipRegion;
 
-                return Ok(oDto);
+                return Ok(oView);
             }
             catch (System.Exception)
             {
@@ -41,17 +41,18 @@ namespace labNetPracica7.API.Controllers
             }
         }
 
-        public IHttpActionResult Post([FromBody] OrdersView oView)
+        public IHttpActionResult Post([FromBody] OrdersView orderView)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    oDto.Ship = oView.ship;
-                    oDto.City = oView.city;
-                    oDto.Region = oView.region;
+                    oDto.Ship = orderView.Ship;
+                    oDto.City = orderView.City;
+                    oDto.Region = orderView.Region;
 
-                    return Ok("Se creo correctamente la orden");
+                    oServicio.Insert(oDto);
+                    return CreatedAtRoute("DefaultApi", new { id = orderView }, orderView);
                 }
                 else
                 {
@@ -64,22 +65,24 @@ namespace labNetPracica7.API.Controllers
             }
         }
 
-        public IHttpActionResult Put([FromBody] OrdersView oView)
+        public IHttpActionResult Put(int id, [FromBody] OrdersView ordersView)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var updateOrder = new OrderDto
+                    Orders order = oServicio.GetById(id);
+                    if (order.OrderID == ordersView.Id)
                     {
-                        Id = oView.Id,
-                        Ship = oView.ship,
-                        City = oView.city,
-                        Region = oView.region,
-                    };  
+                        oDto.Id = ordersView.Id;
+                        oDto.Ship = ordersView.Ship;
+                        oDto.City = ordersView.City;
+                        oDto.Region = ordersView.Region;
 
-                    oServicio.Update(updateOrder);
-                    return Ok("El empleado se modifico correctamente");
+                        oServicio.Update(oDto);
+                    }
+
+                    return Ok(oDto);
                 }
                 else
                 {
@@ -97,7 +100,8 @@ namespace labNetPracica7.API.Controllers
         {
             try
             {
-                oServicio.Delete(id);
+                Orders orders = oServicio.GetById(id);
+                oServicio.Delete(orders.OrderID);
                 return Ok("Orden eliminada correctamente");
             }
             catch (System.Exception)

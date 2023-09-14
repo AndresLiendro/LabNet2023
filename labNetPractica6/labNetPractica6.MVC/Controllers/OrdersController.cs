@@ -21,9 +21,9 @@ namespace labNetPractica6.MVC.Controllers
             var ordersV = orders.Select(o => new OrdersView
             {
                 Id = o.Id,
-                ship = o.Ship,
-                city = o.City,
-                region = o.Region,
+                Ship = o.Ship,
+                City = o.City,
+                Region = o.Region,
             }).ToList();
 
             return View(ordersV);
@@ -38,9 +38,9 @@ namespace labNetPractica6.MVC.Controllers
         {
             var orderObtenido = orderServicio.GetById(id);
             ordersView.Id = orderObtenido.OrderID;
-            ordersView.ship = orderObtenido.ShipName;
-            ordersView.city = orderObtenido.ShipCity;
-            ordersView.region = orderObtenido.ShipRegion;
+            ordersView.Ship = orderObtenido.ShipName;
+            ordersView.City = orderObtenido.ShipCity;
+            ordersView.Region = orderObtenido.ShipRegion;
 
             return View("Update", ordersView);
         }
@@ -52,9 +52,9 @@ namespace labNetPractica6.MVC.Controllers
             {
                 var nuevaOrder = new OrderDto
                 {
-                    Ship = model.ship,
-                    City = model.city,
-                    Region = model.region,
+                    Ship = model.Ship,
+                    City = model.City,
+                    Region = model.Region,
                 };
 
                 orderServicio.Insert(nuevaOrder);
@@ -72,9 +72,9 @@ namespace labNetPractica6.MVC.Controllers
                 var modificarOrder = new OrderDto
                 {
                     Id = model.Id,
-                    Ship = model.ship,
-                    City = model.city,
-                    Region = model.region,
+                    Ship = model.Ship,
+                    City = model.City,
+                    Region = model.Region,
                 };
 
                 orderServicio.Update(modificarOrder);

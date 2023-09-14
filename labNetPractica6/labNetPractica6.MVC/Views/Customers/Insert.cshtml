@@ -8,16 +8,16 @@
     @Html.HiddenFor(c => c.Id);
 
     <label>Company Name:</label>
-    @Html.TextBoxFor(c => c.companyName)
-    @Html.ValidationMessageFor(c => c.companyName, "", new { @class = "text-danger" })
+    @Html.TextBoxFor(c => c.CompanyName)
+    @Html.ValidationMessageFor(c => c.CompanyName, "", new { @class = "text-danger" })
     <br />
     <label>Contact Name:</label>
-    @Html.TextBoxFor(c => c.contactName)
-    @Html.ValidationMessageFor(c => c.contactName, "", new { @class = "text-danger" })
+    @Html.TextBoxFor(c => c.ContactName)
+    @Html.ValidationMessageFor(c => c.ContactName, "", new { @class = "text-danger" })
     <br />
     <label>Contact Title:</label>
-    @Html.TextBoxFor(c => c.contactTitle)
-    @Html.ValidationMessageFor(c => c.contactTitle, "", new { @class = "text-danger" })
+    @Html.TextBoxFor(c => c.ContactTitle)
+    @Html.ValidationMessageFor(c => c.ContactTitle, "", new { @class = "text-danger" })
     <br />
 
     <input type="submit" class="btn btn-success" value="Guardar" />

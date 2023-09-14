@@ -8,16 +8,16 @@
     @Html.HiddenFor(o => o.Id);
 
     <label>Ship Name:</label>
-    @Html.TextBoxFor(o => o.ship)
-    @Html.ValidationMessageFor(o => o.ship, "", new { @class = "text-danger" })
+    @Html.TextBoxFor(o => o.Ship)
+    @Html.ValidationMessageFor(o => o.Ship, "", new { @class = "text-danger" })
     <br />
     <label>City Name:</label>
-    @Html.TextBoxFor(o => o.city)
-    @Html.ValidationMessageFor(o => o.city, "", new { @class = "text-danger" })
+    @Html.TextBoxFor(o => o.City)
+    @Html.ValidationMessageFor(o => o.City, "", new { @class = "text-danger" })
     <br />
     <label>Region:</label>
-    @Html.TextBoxFor(o => o.region)
-    @Html.ValidationMessageFor(o => o.region, "", new { @class = "text-danger" })
+    @Html.TextBoxFor(o => o.Region)
+    @Html.ValidationMessageFor(o => o.Region, "", new { @class = "text-danger" })
     <br />
 
     <input type="submit" class="btn btn-info" value="Actualizar" />

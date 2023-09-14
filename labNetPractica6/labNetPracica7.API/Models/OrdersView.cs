@@ -9,16 +9,16 @@ namespace labNetPracica7.API.Models
         [Required]
         [StringLength(10)]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
-        public string ship { get; set; }
+        public string Ship { get; set; }
 
         [Required]
         [StringLength(10)]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
-        public string city { get; set; }
+        public string City { get; set; }
 
         [Required]
         [StringLength(10)]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
-        public string region { get; set; }
+        public string Region { get; set; }
     }
 }

@@ -23,9 +23,9 @@ namespace labNetPractica6.MVC.Controllers
             var customerV = customers.Select(c => new CustomersView
             {
                 Id = c.Id,
-                companyName = c.CompanyName,
-                contactName = c.ContactName,
-                contactTitle = c.ContactTitle,
+                CompanyName = c.CompanyName,
+                ContactName = c.ContactName,
+                ContactTitle = c.ContactTitle,
             }).ToList();
 
             return View(customerV);
@@ -40,9 +40,9 @@ namespace labNetPractica6.MVC.Controllers
         {
             var customerObtenido = customerServicio.GetById(id);
             customersView.Id = customerObtenido.CustomerID;
-            customersView.companyName = customerObtenido.CompanyName;
-            customersView.contactName = customerObtenido.ContactName;
-            customersView.contactTitle = customerObtenido.ContactTitle;
+            customersView.CompanyName = customerObtenido.CompanyName;
+            customersView.ContactName = customerObtenido.ContactName;
+            customersView.ContactTitle = customerObtenido.ContactTitle;
 
             return View("Update", customersView);
         }
@@ -54,9 +54,9 @@ namespace labNetPractica6.MVC.Controllers
             {
                 var nuevoCustomer = new CustomerDto
                 {
-                    CompanyName = model.companyName,
-                    ContactName = model.contactName,
-                    ContactTitle = model.contactTitle,
+                    CompanyName = model.CompanyName,
+                    ContactName = model.ContactName,
+                    ContactTitle = model.ContactTitle,
                 };
 
                 customerServicio.Insert(nuevoCustomer);
@@ -74,9 +74,9 @@ namespace labNetPractica6.MVC.Controllers
                 var customerMod = new CustomerDto
                 {
                     Id = model.Id,
-                    CompanyName = model.companyName,
-                    ContactName = model.contactName,
-                    ContactTitle = model.contactTitle,
+                    CompanyName = model.CompanyName,
+                    ContactName = model.ContactName,
+                    ContactTitle = model.ContactTitle,
                 };
 
                 customerServicio.Update(customerMod);
