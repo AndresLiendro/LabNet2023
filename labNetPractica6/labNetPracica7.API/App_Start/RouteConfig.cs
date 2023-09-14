@@ -17,13 +17,8 @@ namespace labNetPracica7.API
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-
-            routes.MapHttpRoute(
-                name: "RickAndMortyApi",
-                routeTemplate: "api/rickandmorty/{action}",
-                defaults: new { controller = "RickAndMortyApi" }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] {"labNetPractica7.API.Controllers"}
             );
         }
     }

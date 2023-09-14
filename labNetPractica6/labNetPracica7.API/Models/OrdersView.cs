@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace labNetPractica6.MVC.Models
+namespace labNetPracica7.API.Models
 {
     public class OrdersView
     {

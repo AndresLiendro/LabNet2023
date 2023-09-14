@@ -9,7 +9,6 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
     {
         private int EntidadId = 0;
         private string EntidadNombnre;
-        private bool Flag = false;
         private CustomerServicio customersServicio = new CustomerServicio();
         public CustomersConsulta()
         {
@@ -79,9 +78,7 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
 
                 this.EntidadId = idSelec;
                 this.EntidadNombnre = companyName;
-                this.Flag = true;
             }
-            else { Flag = false; }
         }
         private void dgvCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -100,7 +97,6 @@ namespace labNetPractica3.EF.UI.Presentations.Customers
                 EntidadId = 0;
 
                 dgvCustomers.CurrentCell = null;
-                Flag = false;
             }
             else
             {
