@@ -21,7 +21,7 @@ const listOrders: Orders[] = [
   styleUrls: ['./obtener-orders.component.css']
 })
 export class ObtenerOrdersComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['shipName', 'shipCity', 'shipRegion'];
+  displayedColumns: string[] = ['shipName', 'shipCity', 'shipRegion', 'Acciones'];
   dataSource = new MatTableDataSource<Orders>(listOrders);
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
