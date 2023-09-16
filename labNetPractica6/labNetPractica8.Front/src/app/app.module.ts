@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { AgregarEditarOrdersComponent } from './components/add-update-orders/agregar-editar-orders/agregar-editar-orders.component';
 import { EliminarOrdersComponent } from './components/delete-orders/eliminar-orders/eliminar-orders.component';
 import { ObtenerOrdersComponent } from './components/get-orders/obtener-orders/obtener-orders.component';
+import { OrdersModelComponent } from './models/orders-model/orders-model.component';
+import { SharedModuleComponent } from './shared/shared-module/shared-module.component';
+
 
 @NgModule({
   declarations: [
@@ -13,6 +16,8 @@ import { ObtenerOrdersComponent } from './components/get-orders/obtener-orders/o
     AgregarEditarOrdersComponent,
     EliminarOrdersComponent,
     ObtenerOrdersComponent,
+    OrdersModelComponent,
+    SharedModuleComponent,
 
   ],
   imports: [
