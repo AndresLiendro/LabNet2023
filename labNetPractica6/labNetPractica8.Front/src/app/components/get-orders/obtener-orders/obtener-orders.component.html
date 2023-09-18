@@ -25,6 +25,11 @@
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Region </th>
             <td mat-cell *matCellDef="let element"> {{element.shipRegion}} </td>
             </ng-container>
+
+        <ng-container matColumnDef="createDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Creacion </th>
+            <td mat-cell *matCellDef="let element"> {{element.createDate}} </td>
+            </ng-container>
         
         <ng-container matColumnDef="Acciones">
             <th mat-header-cell *matHeaderCellDef> Opciones 

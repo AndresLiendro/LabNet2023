@@ -6,14 +6,14 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Orders } from 'src/app/models/orders-model/orders';
 
 const listOrders: Orders[] = [
-  { shipName: 'Prueba', shipCity: 'Ciudad de Prueba', shipRegion: 'RJE' },
-  { shipName: 'Prueba1', shipCity: 'Ciudad de Prueba1', shipRegion: 'RJE1' },
-  { shipName: 'Prueba2', shipCity: 'Ciudad de Prueba2', shipRegion: 'RJE2' },
-  { shipName: 'Prueba3', shipCity: 'Ciudad de Prueba3', shipRegion: 'RJE3' },
-  { shipName: 'Prueba4', shipCity: 'Ciudad de Prueba4', shipRegion: 'RJE4' },
-  { shipName: 'Prueba5', shipCity: 'Ciudad de Prueba5', shipRegion: 'RJE5' },
-  { shipName: 'Prueba6', shipCity: 'Ciudad de Prueba6', shipRegion: 'RJE6' },
-  { shipName: 'Prueba7', shipCity: 'Ciudad de Prueba7', shipRegion: 'RJE7' },
+  { shipName: 'Prueba', shipCity: 'Ciudad de Prueba', shipRegion: 'RJE', createDate: 'time' },
+  { shipName: 'Prueba1', shipCity: 'Ciudad de Prueba1', shipRegion: 'RJE1', createDate: 'time1' },
+  { shipName: 'Prueba2', shipCity: 'Ciudad de Prueba2', shipRegion: 'RJE2', createDate: 'time2' },
+  { shipName: 'Prueba3', shipCity: 'Ciudad de Prueba3', shipRegion: 'RJE3', createDate: 'time3' },
+  { shipName: 'Prueba4', shipCity: 'Ciudad de Prueba4', shipRegion: 'RJE4', createDate: 'time4' },
+  { shipName: 'Prueba5', shipCity: 'Ciudad de Prueba5', shipRegion: 'RJE5', createDate: 'time5' },
+  { shipName: 'Prueba6', shipCity: 'Ciudad de Prueba6', shipRegion: 'RJE6', createDate: 'time6' },
+  { shipName: 'Prueba7', shipCity: 'Ciudad de Prueba7', shipRegion: 'RJE7', createDate: 'time7' },
 ];
 
 @Component({
@@ -22,7 +22,7 @@ const listOrders: Orders[] = [
   styleUrls: ['./obtener-orders.component.css']
 })
 export class ObtenerOrdersComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['shipName', 'shipCity', 'shipRegion', 'Acciones'];
+  displayedColumns: string[] = ['shipName', 'shipCity', 'shipRegion', 'createDate', 'Acciones'];
   dataSource = new MatTableDataSource<Orders>(listOrders);
   loading: boolean = false;
 
