@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { AgregarEditarOrdersComponent } from './components/add-update-orders/agregar-editar-orders/agregar-editar-orders.component';
 import { EliminarOrdersComponent } from './components/delete-orders/eliminar-orders/eliminar-orders.component';
 import { ObtenerOrdersComponent } from './components/get-orders/obtener-orders/obtener-orders.component';
+import { VerordersComponent } from './components/show-orders/verorders/verorders.component';
 
 
 
@@ -21,6 +22,7 @@ import { ObtenerOrdersComponent } from './components/get-orders/obtener-orders/o
     AgregarEditarOrdersComponent,
     EliminarOrdersComponent,
     ObtenerOrdersComponent,
+    VerordersComponent,
 
   ],
   imports: [

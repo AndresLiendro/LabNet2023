@@ -2,16 +2,6 @@ table {
     width: 100%;
 }
 
-.title {
-    background: lightpink;
-    padding: 20px;
-    text-align: center;
-}
-
-.container {
-    margin: 0 20%;
-}
-
 td, th {
     width: 15%;
 }
