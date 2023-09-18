@@ -17,6 +17,10 @@
     @Html.TextBoxFor(o => o.Region)
     @Html.ValidationMessageFor(o => o.Region, "", new { @class = "text-danger" })
     <br />
+    <label>Fecha:</label>
+    @Html.TextBoxFor(o => o.CreateDays)
+    @Html.ValidationMessageFor(o => o.CreateDays, "", new { @class = "text-danger" })
+    <br />
 
     <input type="submit" class="btn btn-success" value="Guardar" />
 }

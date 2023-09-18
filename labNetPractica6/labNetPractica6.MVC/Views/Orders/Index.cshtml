@@ -13,6 +13,7 @@
             <th scope="col">Ship</th>
             <th scope="col">City</th>
             <th scope="col">Region</th>
+            <th scope="col">Fecha</th>
             <th scope="col">Opciones</th>
         </tr>
     </thead>
@@ -25,15 +26,19 @@
                 <td>@order.Ship</td>
                 <td>@order.City</td>
                 <td>@order.Region</td>
+                <td>@order.CreateDays</td>
                 <td>
                     @Html.ActionLink("Agregar", "Insert", new { id = order.Id }, new { @class = "btn btn-success" })
                 </td>
                 <td>
-                    @Html.ActionLink("Modificar", "Update", new {id = order.Id}, new {@class = "btn btn-info"})
+                    @Html.ActionLink("Modificar", "Update", new { id = order.Id }, new { @class = "btn btn-info" })
                 </td>
                 <td>
-                    @Html.ActionLink("Eliminar", "Delete", new { id = order.Id }, new { @class = "btn btn-danger", 
-                        onclick = "return confirm('¿Está seguro que desea eliminar esta orden?')" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = order.Id }, new
+                    {
+                        @class = "btn btn-danger",
+                        onclick = "return confirm('¿Está seguro que desea eliminar esta orden?')"
+                    })
                 </td>
             </tr>
         }

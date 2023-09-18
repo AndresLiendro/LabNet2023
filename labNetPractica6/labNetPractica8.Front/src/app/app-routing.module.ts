@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'verOrders/:id', component: VerordersComponent},
   {path: 'agregarOrders', component: AgregarEditarOrdersComponent},
   {path: 'editarOrders/:id', component: AgregarEditarOrdersComponent},
-  {path: 'eliminarOrders/:id', component: EliminarOrdersComponent},
+  {path: 'eliminarOrders/', component: EliminarOrdersComponent},
   { path: '**', redirectTo: 'listaOrders', pathMatch: 'full' }
 ];
 

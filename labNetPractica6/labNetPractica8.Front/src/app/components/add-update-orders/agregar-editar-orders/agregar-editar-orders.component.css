@@ -1,0 +1,19 @@
+.card {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+.mat-mdc-card-subtitle {
+    margin: 0 2%;
+    font-size: 20px;
+}
+
+.mat-mdc-form-field {
+    margin: 5px;
+    width: 100%;
+}
+
+button {
+    margin-right: 5px;
+    border-radius: 25px;
+}

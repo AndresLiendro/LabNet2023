@@ -19,6 +19,7 @@ namespace labNetPractica3.EF.Logic.Order
                 Ship = x.ShipName,
                 City = x.ShipCity,
                 Region = x.ShipRegion,
+                CreateDate = DateTime.Now,
             }).ToList();
 
             return result;
@@ -31,6 +32,7 @@ namespace labNetPractica3.EF.Logic.Order
                 ShipName = dto.Ship,
                 ShipCity = dto.City,
                 ShipRegion = dto.Region,
+                OrderDate = dto.CreateDate,
             };
 
                 context.Orders.Add(NewOrder);
@@ -47,6 +49,7 @@ namespace labNetPractica3.EF.Logic.Order
                 orderU.ShipName = dto.Ship;
                 orderU.ShipCity = dto.City;
                 orderU.ShipRegion = dto.Region;
+                orderU.OrderDate = dto.CreateDate;
 
                 result  = context.SaveChanges() > 0;
             }

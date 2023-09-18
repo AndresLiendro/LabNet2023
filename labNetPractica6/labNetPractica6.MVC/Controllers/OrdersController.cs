@@ -24,6 +24,7 @@ namespace labNetPractica6.MVC.Controllers
                 Ship = o.Ship,
                 City = o.City,
                 Region = o.Region,
+                CreateDays = o.CreateDate,
             }).ToList();
 
             return View(ordersV);
@@ -41,6 +42,7 @@ namespace labNetPractica6.MVC.Controllers
             ordersView.Ship = orderObtenido.ShipName;
             ordersView.City = orderObtenido.ShipCity;
             ordersView.Region = orderObtenido.ShipRegion;
+            ordersView.CreateDays = (DateTime)orderObtenido.OrderDate;
 
             return View("Update", ordersView);
         }
@@ -55,6 +57,7 @@ namespace labNetPractica6.MVC.Controllers
                     Ship = model.Ship,
                     City = model.City,
                     Region = model.Region,
+                    CreateDate = model.CreateDays,
                 };
 
                 orderServicio.Insert(nuevaOrder);
@@ -75,6 +78,7 @@ namespace labNetPractica6.MVC.Controllers
                     Ship = model.Ship,
                     City = model.City,
                     Region = model.Region,
+                    CreateDate = model.CreateDays,
                 };
 
                 orderServicio.Update(modificarOrder);

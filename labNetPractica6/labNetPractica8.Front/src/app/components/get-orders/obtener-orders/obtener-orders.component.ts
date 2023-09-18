@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild, } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Orders } from 'src/app/models/orders-model/orders';
@@ -23,11 +24,12 @@ const listOrders: Orders[] = [
 export class ObtenerOrdersComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['shipName', 'shipCity', 'shipRegion', 'Acciones'];
   dataSource = new MatTableDataSource<Orders>(listOrders);
-  
+  loading: boolean = false;
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor () { }
+  constructor (private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     
@@ -45,5 +47,17 @@ export class ObtenerOrdersComponent implements OnInit, AfterViewInit {
       if (this.dataSource.paginator) {
         this.dataSource.paginator.firstPage();
       }
+  }
+
+  eliminarOrders() {
+    this.loading = true;
+
+    setTimeout(() => {
+      this.loading = false;
+      this._snackBar.open('La orden fue eliminada con exito', '', {
+        duration: 3000,
+        horizontalPosition: 'right',
+      });
+    }, 2800);
   }
 }

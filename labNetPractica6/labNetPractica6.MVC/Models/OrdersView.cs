@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace labNetPractica6.MVC.Models
 {
@@ -20,5 +21,7 @@ namespace labNetPractica6.MVC.Models
         [StringLength(10)]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
         public string Region { get; set; }
+
+        public DateTime CreateDays { get; set; }
     }
 }
