@@ -1,6 +1,7 @@
 ﻿using labNetPracica7.API.Models;
 using labNetPractica3.EF.Entities;
 using labNetPractica3.EF.Logic.Order;
+using System;
 using System.Web.Http;
 
 namespace labNetPracica7.API.Controllers
@@ -32,6 +33,7 @@ namespace labNetPracica7.API.Controllers
                 oView.Ship = orders.ShipName;
                 oView.City = orders.ShipCity;
                 oView.Region = orders.ShipRegion;
+                oView.CreateDate = (DateTime)orders.OrderDate;
 
                 return Ok(oView);
             }
@@ -50,6 +52,7 @@ namespace labNetPracica7.API.Controllers
                     oDto.Ship = orderView.Ship;
                     oDto.City = orderView.City;
                     oDto.Region = orderView.Region;
+                    oDto.CreateDate = DateTime.Now;
 
                     oServicio.Insert(oDto);
 
