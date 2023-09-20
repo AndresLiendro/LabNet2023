@@ -1,5 +1,3 @@
-import { Time } from "@angular/common";
-
 export interface Orders{
     id?: number,
     shipName: string,
