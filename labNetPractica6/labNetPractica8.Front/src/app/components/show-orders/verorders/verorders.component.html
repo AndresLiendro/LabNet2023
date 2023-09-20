@@ -1,14 +1,15 @@
 <div class="title">
     <h1>Aqui empiezo para ver las orden en detalle</h1>
 </div>
-<div class="container">
+<app-spinner *ngIf="loading"></app-spinner>
+<div *ngIf="order != null" class="container">
     <mat-card class="card">
-        <mat-card-title>De momento esto va a ser un ejemplo</mat-card-title>
+        <mat-card-title> {{ order.shipName }} </mat-card-title>
         <mat-card-content>
-            <p><strong>Ciudad:</strong> Aqui iria la Ciudad</p>
-            <p><strong>Region:</strong> Aqui iria la Region</p>
-            <p><strong>Direccion:</strong> Aqui iria la Direccion/p>
-            <p><strong>Otro dato a fijar:</strong> Aqui iria otro dato de bd/</p>
+            <p><strong>Ciudad:</strong> {{ order.shipCity }} </p>
+            <p><strong>Region:</strong> {{ order.shipRegion }} </p>
+            <p><strong>Direccion:</strong> {{ order.shipAddress }} </p>
+            <!-- <p><strong>Otro dato a fijar:</strong> Aqui iria otro dato de bd/</p> -->
         </mat-card-content>
         <mat-card-actions>
             <button routerLink="/listaOrders" mat-raised-button>Volver</button>

@@ -27,8 +27,10 @@ export class ObtenerOrdersComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit () {
     this.dataSource.paginator = this.paginator;
-    this.paginator._intl.itemsPerPageLabel = 'Items';
     this.dataSource.sort = this.sort;
+    if (this.dataSource.data.length > 0) {
+      this.paginator._intl.itemsPerPageLabel = 'Items';
+    }
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -40,20 +42,34 @@ export class ObtenerOrdersComponent implements OnInit, AfterViewInit {
   }
 
   obtenerOrders() {
-      this._orderService.getOrders().subscribe(data => {
-      this.dataSource.data = data;
-    });
+    this.loading = true;
+    this._orderService.getOrders().subscribe({
+      next: (data) => {
+        this.loading = false;
+        this.dataSource.data = data;
+      },
+      error: (e) => {
+        this.loading = false;
+        console.log("Ocurrio un error al comunicarse con el servidor")
+      },
+      complete: () => console.info('Se competo la operacion') 
+  });
   }
 
-  eliminarOrders() {
+  eliminarOrders(id: number) {
     this.loading = true;
-
-    setTimeout(() => {
+    this._orderService.deleteOrder(id).subscribe(() => {
+      this.msgExito();
       this.loading = false;
-      this._snackBar.open('La orden fue eliminada con exito', '', {
-        duration: 3000,
-        horizontalPosition: 'right',
-      });
-    }, 2800);
+      this.obtenerOrders();
+    });
+
+  }
+  
+  msgExito() {
+    this._snackBar.open('La orden fue eliminada con exito', '', {
+      duration: 3000,
+      horizontalPosition: 'right',
+    });
   }
 }

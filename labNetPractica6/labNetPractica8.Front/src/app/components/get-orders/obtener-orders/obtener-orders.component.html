@@ -36,9 +36,9 @@
                 <button [routerLink]="['/agregarOrders']" class="agregar" mat-raised-button color="primary">Agregar</button>
                  </th>
             <td mat-cell *matCellDef="let element">
-                <mat-icon [routerLink]="['/verOrders', 1]" class="search" fontIcon="search" matTooltip="Ver"></mat-icon>
-                <mat-icon routerLink="/editarOrders/{{1}}" class="edit" fontIcon="edit" matTooltip="Editar"></mat-icon>
-                <mat-icon (click)="eliminarOrders()" routerLink="/eliminarOrders" class="delete" fontIcon="delete" matTooltip="Eliminar"></mat-icon>
+                <mat-icon [routerLink]="['/verOrders', element.id]" class="search" fontIcon="search" matTooltip="Ver"></mat-icon>
+                <mat-icon routerLink="/editarOrders/{{ element.id }}" class="edit" fontIcon="edit" matTooltip="Editar"></mat-icon>
+                <mat-icon (click)="eliminarOrders(element.id)" routerLink="/eliminarOrders" class="delete" fontIcon="delete" matTooltip="Eliminar"></mat-icon>
             </td>
             </ng-container>
 

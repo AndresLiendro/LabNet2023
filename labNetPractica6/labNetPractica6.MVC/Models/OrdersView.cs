@@ -5,26 +5,23 @@ namespace labNetPractica6.MVC.Models
 {
     public class OrdersView
     {
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(40)]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
         public string Ship { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(15)]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
         public string City { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [StringLength(15)]
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
         public string Region { get; set; }
 
-        [Required]
         [StringLength(60)]
-        [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
         public string Address { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace labNetPracica7.API.Controllers
         private OrderDto oDto = new OrderDto();
         private OrdersView oView = new OrdersView();
         // GET: Orders
+
         public IHttpActionResult Get()
         {
             try
@@ -26,11 +27,12 @@ namespace labNetPracica7.API.Controllers
             }
         }
 
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult GetbyID(int id)
         {
             try
             {
                 Orders orders = oServicio.GetById(id);
+
                 oView.Id = orders.OrderID;
                 oView.Ship = orders.ShipName;
                 oView.City = orders.ShipCity;
