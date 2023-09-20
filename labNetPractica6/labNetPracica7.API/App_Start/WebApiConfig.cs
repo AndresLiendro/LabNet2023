@@ -11,8 +11,7 @@ namespace labNetPracica7.API
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            var cors = new EnableCorsAttribute("http://localhost:44342", "*", "*");
-            config.EnableCors(cors);
+            config.EnableCors();
             // Web API routes
             config.MapHttpAttributeRoutes();
 

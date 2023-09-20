@@ -22,6 +22,9 @@ namespace labNetPractica6.MVC.Models
         [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
         public string Region { get; set; }
 
-        public DateTime CreateDays { get; set; }
+        [Required]
+        [StringLength(60)]
+        [RegularExpression("^[a-zA-Z\\s]+$", ErrorMessage = "El nombre de empleado no acepta valores numericos ni simbolos")]
+        public string Address { get; set; }
     }
 }

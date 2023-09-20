@@ -13,7 +13,7 @@
             <th scope="col">Ship</th>
             <th scope="col">City</th>
             <th scope="col">Region</th>
-            <th scope="col">Fecha</th>
+            <th scope="col">Address</th>
             <th scope="col">Opciones</th>
         </tr>
     </thead>
@@ -26,7 +26,7 @@
                 <td>@order.Ship</td>
                 <td>@order.City</td>
                 <td>@order.Region</td>
-                <td>@order.CreateDays</td>
+                <td>@order.Address</td>
                 <td>
                     @Html.ActionLink("Agregar", "Insert", new { id = order.Id }, new { @class = "btn btn-success" })
                 </td>

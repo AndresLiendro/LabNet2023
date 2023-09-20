@@ -16,7 +16,7 @@ export class AgregarEditarOrdersComponent implements OnInit {
       nombre: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(10),])],
       ciudad: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(10),])],
       region: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(10),])],
-      createDate: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(10),])],
+      direccion: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(10),])],
     })
   }
 
@@ -30,7 +30,7 @@ export class AgregarEditarOrdersComponent implements OnInit {
       shipName: this.form.get('nombre')?.value,
       shipCity: this.form.value.ciudad,
       shipRegion: this.form.get('region')?.value,
-      createDate: this.form.value.createDate,
+      shipAddress: this.form.value.direccion,
     }
   }
 }

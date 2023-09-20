@@ -13,6 +13,6 @@ namespace labNetPractica3.EF.Logic.Order
         public string City { get; set; }
         public string Region { get; set; }
 
-        public DateTime CreateDate { get; set; }
+        public string Address { get; set; }
     }
 }

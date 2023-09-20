@@ -5,5 +5,5 @@ export interface Orders{
     shipName: string,
     shipCity: string,
     shipRegion: string,
-    createDate: string,
+    shipAddress: string,
 }

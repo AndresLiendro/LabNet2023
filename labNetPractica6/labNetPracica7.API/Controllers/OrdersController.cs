@@ -3,9 +3,11 @@ using labNetPractica3.EF.Entities;
 using labNetPractica3.EF.Logic.Order;
 using System;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace labNetPracica7.API.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class OrdersController : ApiController
     {
         private OrderServicio oServicio = new OrderServicio();
@@ -33,7 +35,7 @@ namespace labNetPracica7.API.Controllers
                 oView.Ship = orders.ShipName;
                 oView.City = orders.ShipCity;
                 oView.Region = orders.ShipRegion;
-                oView.CreateDate = (DateTime)orders.OrderDate;
+                oView.Address = orders.ShipAddress;
 
                 return Ok(oView);
             }
@@ -52,7 +54,7 @@ namespace labNetPracica7.API.Controllers
                     oDto.Ship = orderView.Ship;
                     oDto.City = orderView.City;
                     oDto.Region = orderView.Region;
-                    oDto.CreateDate = DateTime.Now;
+                    oDto.Address = orderView.Address;
 
                     oServicio.Insert(oDto);
 
@@ -83,6 +85,7 @@ namespace labNetPracica7.API.Controllers
                         oDto.Ship = ordersView.Ship;
                         oDto.City = ordersView.City;
                         oDto.Region = ordersView.Region;
+                        oDto.Address = ordersView.Address;
 
                         oServicio.Update(oDto);
                     }
