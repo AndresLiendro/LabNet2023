@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 //Components
 import { ObtenerOrdersComponent } from './components/get-orders/obtener-orders/obtener-orders.component';
 import { AgregarEditarOrdersComponent } from './components/add-update-orders/agregar-editar-orders/agregar-editar-orders.component';
-import { EliminarOrdersComponent } from './components/delete-orders/eliminar-orders/eliminar-orders.component';
 import { VerordersComponent } from './components/show-orders/verorders/verorders.component';
 
 const routes: Routes = [
@@ -13,7 +12,6 @@ const routes: Routes = [
   {path: 'verOrders/:id', component: VerordersComponent},
   {path: 'agregarOrders', component: AgregarEditarOrdersComponent},
   {path: 'editarOrders/:id', component: AgregarEditarOrdersComponent},
-  {path: 'eliminarOrders/', component: EliminarOrdersComponent},
   { path: '**', redirectTo: 'listaOrders', pathMatch: 'full' }
 ];
 

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Orders } from 'src/app/models/orders-model/orders';
 import { OrdersService } from 'src/app/services/order-service/orders.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-verorders',
@@ -29,6 +28,7 @@ export class VerordersComponent implements OnInit {
       next: (data) => {
         this.loading = false;
         this.order = data;
+        console.log(data);
       },
       error: (e) => {
         this.loading = false;

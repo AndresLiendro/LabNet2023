@@ -9,11 +9,11 @@ import { OrdersService } from 'src/app/services/order-service/orders.service';
 @Component({
   selector: 'app-obtener-orders',
   templateUrl: './obtener-orders.component.html',
-  styleUrls: ['./obtener-orders.component.css']
+  styleUrls: ['./obtener-orders.component.css'],
 })
 export class ObtenerOrdersComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['shipName', 'shipCity', 'shipRegion', 'shipAddress', 'Acciones'];
-  dataSource = new MatTableDataSource<Orders>();
+  displayedColumns: string[] = ['Nombre', 'Ciudad', 'Region', 'Address', 'Acciones'];
+  dataOrders = new MatTableDataSource<Orders>;
   loading: boolean = false;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -26,18 +26,19 @@ export class ObtenerOrdersComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit () {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-    if (this.dataSource.data.length > 0) {
+    this.dataOrders.paginator = this.paginator;
+    this.dataOrders.sort = this.sort;
+    if (this.dataOrders.data.length > 0) {
       this.paginator._intl.itemsPerPageLabel = 'Items';
     }
   }
+  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataOrders.filter = filterValue.trim().toLowerCase();
 
-      if (this.dataSource.paginator) {
-        this.dataSource.paginator.firstPage();
+      if (this.dataOrders.paginator) {
+        this.dataOrders.paginator.firstPage();
       }
   }
 
@@ -46,14 +47,14 @@ export class ObtenerOrdersComponent implements OnInit, AfterViewInit {
     this._orderService.getOrders().subscribe({
       next: (data) => {
         this.loading = false;
-        this.dataSource.data = data;
+        this.dataOrders.data = data;
       },
       error: (e) => {
         this.loading = false;
         console.log("Ocurrio un error al comunicarse con el servidor")
       },
       complete: () => console.info('Se competo la operacion') 
-  });
+    });
   }
 
   eliminarOrders(id: number) {
@@ -63,7 +64,6 @@ export class ObtenerOrdersComponent implements OnInit, AfterViewInit {
       this.loading = false;
       this.obtenerOrders();
     });
-
   }
   
   msgExito() {

@@ -1,14 +1,14 @@
 <div class="title">
-    <h1>Aqui empiezo para ver las orden en detalle</h1>
+    <h1>Detalles de la Orden</h1>
 </div>
 <app-spinner *ngIf="loading"></app-spinner>
 <div *ngIf="order != null" class="container">
     <mat-card class="card">
-        <mat-card-title> {{ order.shipName }} </mat-card-title>
+        <mat-card-title> {{ order.Ship }} </mat-card-title>
         <mat-card-content>
-            <p><strong>Ciudad:</strong> {{ order.shipCity }} </p>
-            <p><strong>Region:</strong> {{ order.shipRegion }} </p>
-            <p><strong>Direccion:</strong> {{ order.shipAddress }} </p>
+            <p><strong>Ciudad:</strong> {{ order.City }} </p>
+            <p><strong>Region:</strong> {{ order.Region }} </p>
+            <p><strong>Direccion:</strong> {{ order.Address }} </p>
             <!-- <p><strong>Otro dato a fijar:</strong> Aqui iria otro dato de bd/</p> -->
         </mat-card-content>
         <mat-card-actions>

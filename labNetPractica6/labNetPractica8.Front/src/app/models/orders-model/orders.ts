@@ -1,7 +1,7 @@
 export interface Orders{
-    id?: number,
-    shipName: string,
-    shipCity: string,
-    shipRegion: string,
-    shipAddress: string,
+    Id?: number;
+    Ship: string;
+    City: string;
+    Region: string;
+    Address: string;
 }

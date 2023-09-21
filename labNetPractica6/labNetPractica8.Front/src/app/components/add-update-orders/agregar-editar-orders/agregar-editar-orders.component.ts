@@ -44,10 +44,10 @@ export class AgregarEditarOrdersComponent implements OnInit {
     this._orderService.getOrdersById(id).subscribe(data => {
       this.loading = false;
       this.form.setValue({
-        nombre: data.shipName,
-        ciudad: data.shipCity,
-        region: data.shipRegion,
-        direccion: data.shipAddress
+        nombre: data.Ship,
+        ciudad: data.City,
+        region: data.Region,
+        direccion: data.Address
       })
     });
   }
@@ -55,14 +55,14 @@ export class AgregarEditarOrdersComponent implements OnInit {
   agregarEditarOrder() {
 
     const order: Orders = {
-      shipName: this.form.get('nombre')?.value,
-      shipCity: this.form.value.ciudad,
-      shipRegion: this.form.get('region')?.value,
-      shipAddress: this.form.value.direccion,
+      Ship: this.form.get('nombre')?.value,
+      City: this.form.value.ciudad,
+      Region: this.form.get('region')?.value,
+      Address: this.form.value.direccion,
     }
 
     if(this.id != 0) {
-      order.id = this.id;
+      order.Id = this.id;
       this.editarOrder(this.id, order);
 
     } else {

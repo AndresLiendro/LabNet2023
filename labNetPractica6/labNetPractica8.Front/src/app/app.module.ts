@@ -10,7 +10,6 @@ import { SharedModule } from './shared/shared.module';
 
 //Componentes
 import { AgregarEditarOrdersComponent } from './components/add-update-orders/agregar-editar-orders/agregar-editar-orders.component';
-import { EliminarOrdersComponent } from './components/delete-orders/eliminar-orders/eliminar-orders.component';
 import { ObtenerOrdersComponent } from './components/get-orders/obtener-orders/obtener-orders.component';
 import { VerordersComponent } from './components/show-orders/verorders/verorders.component';
 
@@ -20,7 +19,6 @@ import { VerordersComponent } from './components/show-orders/verorders/verorders
   declarations: [
     AppComponent,
     AgregarEditarOrdersComponent,
-    EliminarOrdersComponent,
     ObtenerOrdersComponent,
     VerordersComponent,
 
